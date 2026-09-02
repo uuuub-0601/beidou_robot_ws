@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing beidou_gazebo.egg-info/PKG-INFO
+writing dependency_links to beidou_gazebo.egg-info/dependency_links.txt
+writing entry points to beidou_gazebo.egg-info/entry_points.txt
+writing requirements to beidou_gazebo.egg-info/requires.txt
+writing top-level names to beidou_gazebo.egg-info/top_level.txt
+reading manifest file 'beidou_gazebo.egg-info/SOURCES.txt'
+writing manifest file 'beidou_gazebo.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages/beidou-gazebo.egg-link (link to .)
+Installing beidou_position_publisher script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_companion_navigation script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_companion_v2 script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_geofence script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_guard_navigation script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_motion_estimator script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_voice_alarm script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing elderly_walker script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+Installing piper_chinese_tts script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+
+Installed /home/ubbbb/beidou_robot_ws/build/beidou_gazebo
+running symlink_data
+symbolically linking /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/config/elderly_geofence.yaml -> /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/config

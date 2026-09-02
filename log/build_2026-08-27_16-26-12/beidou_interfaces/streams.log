@@ -1,0 +1,129 @@
+[0.013s] Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ubbbb/beidou_robot_ws/build/beidou_interfaces -- -j18 -l18
+[0.098s] [  2%] Built target beidou_interfaces__rs
+[0.099s] [  5%] Built target beidou_interfaces__rosidl_generator_type_description
+[0.113s] [  5%] Built target ament_cmake_python_symlink_beidou_interfaces
+[0.129s] [  8%] Built target beidou_interfaces__cpp
+[0.135s] [ 22%] Built target beidou_interfaces__rosidl_generator_c
+[0.164s] [ 31%] Built target beidou_interfaces__rosidl_typesupport_c
+[0.166s] [ 40%] Built target beidou_interfaces__rosidl_typesupport_introspection_cpp
+[0.166s] [ 48%] Built target beidou_interfaces__rosidl_typesupport_fastrtps_c
+[0.168s] [ 57%] Built target beidou_interfaces__rosidl_typesupport_introspection_c
+[0.168s] [ 65%] Built target beidou_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.168s] [ 74%] Built target beidou_interfaces__rosidl_typesupport_cpp
+[0.204s] [ 74%] Built target beidou_interfaces
+[0.240s] [ 77%] Built target beidou_interfaces__py
+[0.278s] [ 82%] Built target beidou_interfaces__rosidl_generator_py
+[0.317s] [ 88%] Built target beidou_interfaces_s__rosidl_typesupport_c
+[0.318s] [100%] Built target beidou_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.318s] [100%] Built target beidou_interfaces_s__rosidl_typesupport_introspection_c
+[0.367s] running egg_info
+[0.386s] writing beidou_interfaces.egg-info/PKG-INFO
+[0.386s] writing dependency_links to beidou_interfaces.egg-info/dependency_links.txt
+[0.386s] writing top-level names to beidou_interfaces.egg-info/top_level.txt
+[0.443s] reading manifest file 'beidou_interfaces.egg-info/SOURCES.txt'
+[0.444s] writing manifest file 'beidou_interfaces.egg-info/SOURCES.txt'
+[0.477s] [100%] Built target ament_cmake_python_build_beidou_interfaces_egg
+[0.494s] Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ubbbb/beidou_robot_ws/build/beidou_interfaces -- -j18 -l18
+[0.507s] Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ubbbb/beidou_robot_ws/build/beidou_interfaces
+[0.520s] -- Install configuration: ""
+[0.520s] -- Execute custom install script
+[0.521s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/ament_index/resource_index/rosidl_interfaces/beidou_interfaces
+[0.521s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/msg/ElderlyMotion.json
+[0.522s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__functions.h
+[0.522s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__struct.h
+[0.522s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__type_support.h
+[0.523s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/elderly_motion.h
+[0.523s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/rosidl_generator_c__visibility_control.h
+[0.523s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/library_path.sh
+[0.523s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/library_path.dsv
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__rosidl_typesupport_fastrtps_c.h
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__rosidl_typesupport_introspection_c.h
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__builder.hpp
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__struct.hpp
+[0.524s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__traits.hpp
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__type_support.hpp
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/elderly_motion.hpp
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__rosidl_typesupport_fastrtps_cpp.hpp
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.525s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/include/beidou_interfaces/beidou_interfaces/msg/detail/elderly_motion__rosidl_typesupport_introspection_cpp.hpp
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/pythonpath.sh
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/pythonpath.dsv
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[0.526s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/__init__.py
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/_beidou_interfaces_s.ep.rosidl_typesupport_c.c
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/_beidou_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/_beidou_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_c.so
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[0.527s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_introspection_c.so
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/msg/__init__.py
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/msg/_elderly_motion.py
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/msg/_elderly_motion_s.c
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_introspection_c.so
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_c.so
+[0.528s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/ament_index/resource_index/rust_packages/beidou_interfaces
+[0.529s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/rust/Cargo.toml
+[0.529s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/rust/build.rs
+[0.529s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/rust/src/lib.rs
+[0.529s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/rust/src/msg.rs
+[0.529s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/rust/src/msg/rmw.rs
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/msg/ElderlyMotion.idl
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/msg/ElderlyMotion.msg
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/ament_index/resource_index/package_run_dependencies/beidou_interfaces
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/ament_index/resource_index/parent_prefix_path/beidou_interfaces
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/ament_prefix_path.sh
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/ament_prefix_path.dsv
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/path.sh
+[0.530s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/environment/path.dsv
+[0.531s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/local_setup.bash
+[0.531s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/local_setup.sh
+[0.531s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/local_setup.zsh
+[0.531s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/local_setup.dsv
+[0.531s] -- Symlinking: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/package.dsv
+[0.543s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/ament_index/resource_index/packages/beidou_interfaces
+[0.543s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/rosidl_cmake-extras.cmake
+[0.543s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.543s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.544s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[0.544s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[0.544s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.544s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.544s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[0.545s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfacesConfig.cmake
+[0.545s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfacesConfig-version.cmake
+[0.545s] -- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/package.xml
+[0.545s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_generator_c.so
+[0.546s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_fastrtps_c.so
+[0.546s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_introspection_c.so
+[0.546s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_c.so
+[0.547s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[0.547s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_introspection_cpp.so
+[0.547s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_typesupport_cpp.so
+[0.593s] Listing '/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces'...
+[0.593s] Listing '/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages/beidou_interfaces/msg'...
+[0.599s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/libbeidou_interfaces__rosidl_generator_py.so
+[0.599s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_generator_cExport.cmake
+[0.600s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_generator_cExport-noconfig.cmake
+[0.600s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[0.600s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_cExport.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_generator_cppExport.cmake
+[0.601s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_cppExport.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/beidou_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[0.602s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_generator_pyExport.cmake
+[0.603s] -- Up-to-date: /home/ubbbb/beidou_robot_ws/install/beidou_interfaces/share/beidou_interfaces/cmake/export_beidou_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[0.604s] Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ubbbb/beidou_robot_ws/build/beidou_interfaces

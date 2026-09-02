@@ -1,0 +1,8 @@
+source;share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.ps1
+source;share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.dsv
+source;share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.sh
+source;share/beidou_gazebo_pose_bridge/local_setup.bash
+source;share/beidou_gazebo_pose_bridge/local_setup.dsv
+source;share/beidou_gazebo_pose_bridge/local_setup.ps1
+source;share/beidou_gazebo_pose_bridge/local_setup.sh
+source;share/beidou_gazebo_pose_bridge/local_setup.zsh

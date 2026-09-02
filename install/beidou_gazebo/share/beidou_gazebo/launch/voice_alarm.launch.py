@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/launch/voice_alarm.launch.py

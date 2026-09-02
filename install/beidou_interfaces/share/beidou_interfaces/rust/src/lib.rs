@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_generator_rs/beidou_interfaces/rust/src/lib.rs

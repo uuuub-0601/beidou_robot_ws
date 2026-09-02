@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake

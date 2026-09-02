@@ -1,0 +1,1176 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache
+rootdir: /home/ubbbb/beidou_robot_ws/src/beidou_gazebo
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-lint-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.12, launch-testing-3.4.11, ament-pep257-0.17.5, colcon-core-0.21.0, typeguard-4.1.5, cov-4.1.0
+collecting ... 
+collected 82 items                                                             
+
+test/test_beidou_transform.py ....                                       [  4%]
+test/test_companion_navigation.py .........                              [ 15%]
+test/test_copyright.py s                                                 [ 17%]
+test/test_elderly_companion_v2.py ............                           [ 31%]
+test/test_elderly_motion_estimator.py ..........                         [ 43%]
+test/test_elderly_walker.py ...............                              [ 62%]
+test/test_flake8.py F                                                    [ 63%]
+test/test_geofence.py .........                                          [ 74%]
+test/test_guard_navigation.py ...............                            [ 92%]
+test/test_pep257.py F                                                    [ 93%]
+test/test_voice_alarm.py .....                                           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_flake8 __________________________________
+test/test_flake8.py:23: in test_flake8
+    assert rc == 0, \
+E   AssertionError: Found 206 code style errors / warnings:
+E     ./beidou_gazebo/elderly_geofence.py:25:1: D204 1 blank line required after class docstring
+E     ./beidou_gazebo/elderly_geofence.py:107:1: D401 First line should be in imperative mood
+E     ./beidou_gazebo/elderly_geofence.py:109:100: E501 line too long (102 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:110:100: E501 line too long (103 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:111:100: E501 line too long (101 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:134:100: E501 line too long (105 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:181:100: E501 line too long (104 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:193:100: E501 line too long (113 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:281:100: E501 line too long (120 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:282:100: E501 line too long (179 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:283:92: E702 multiple statements on one line (semicolon)
+E     ./beidou_gazebo/elderly_geofence.py:283:100: E501 line too long (107 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:284:100: E501 line too long (117 > 99 characters)
+E     ./beidou_gazebo/elderly_geofence.py:284:102: E702 multiple statements on one line (semicolon)
+E     ./beidou_gazebo/elderly_geofence.py:286:100: E501 line too long (105 > 99 characters)
+E     ./launch/elderly_final.launch.py:9:1: E302 expected 2 blank lines, found 1
+E     ./launch/elderly_final.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:11:52: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:12:41: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:12:51: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:13:100: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:13:100: E501 line too long (183 > 99 characters)
+E     ./launch/elderly_final.launch.py:13:110: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:13:150: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:13:161: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:14:32: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:14:60: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:14:85: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:14:100: E501 line too long (180 > 99 characters)
+E     ./launch/elderly_final.launch.py:14:111: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:14:172: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:15:35: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:15:63: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:15:88: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:15:100: E501 line too long (183 > 99 characters)
+E     ./launch/elderly_final.launch.py:15:117: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:15:175: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:16:32: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:16:60: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:16:85: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:16:100: E501 line too long (175 > 99 characters)
+E     ./launch/elderly_final.launch.py:16:111: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:16:167: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:17:30: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:17:58: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:17:83: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:17:100: E501 line too long (168 > 99 characters)
+E     ./launch/elderly_final.launch.py:17:107: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:17:160: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:18:33: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:18:61: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:18:86: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:18:100: E501 line too long (177 > 99 characters)
+E     ./launch/elderly_final.launch.py:18:113: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:18:169: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:29: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:51: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:86: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:100: E501 line too long (277 > 99 characters)
+E     ./launch/elderly_final.launch.py:19:116: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:123: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:128: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:135: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:140: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:147: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:155: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:165: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:170: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:181: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:186: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:195: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:200: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:214: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:227: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:247: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:19:269: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_final.launch.py:20:100: E501 line too long (115 > 99 characters)
+E     ./launch/elderly_home.launch.py:9:1: E302 expected 2 blank lines, found 1
+E     ./launch/elderly_home.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:11:52: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:12:41: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:12:51: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:13:100: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:13:100: E501 line too long (183 > 99 characters)
+E     ./launch/elderly_home.launch.py:13:110: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:13:150: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:13:161: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:14:32: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:14:60: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:14:85: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:14:100: E501 line too long (180 > 99 characters)
+E     ./launch/elderly_home.launch.py:14:111: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:14:172: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:15:35: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:15:63: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:15:88: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:15:100: E501 line too long (183 > 99 characters)
+E     ./launch/elderly_home.launch.py:15:117: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:15:175: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:16:32: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:16:60: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:16:85: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:16:100: E501 line too long (175 > 99 characters)
+E     ./launch/elderly_home.launch.py:16:111: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:16:167: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:17:30: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:17:58: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:17:83: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:17:100: E501 line too long (168 > 99 characters)
+E     ./launch/elderly_home.launch.py:17:107: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:17:160: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:18:33: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:18:61: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:18:86: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:18:100: E501 line too long (177 > 99 characters)
+E     ./launch/elderly_home.launch.py:18:113: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:18:169: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:29: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:51: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:86: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:100: E501 line too long (277 > 99 characters)
+E     ./launch/elderly_home.launch.py:19:116: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:123: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:128: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:135: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:140: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:147: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:155: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:165: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:170: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:181: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:186: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:195: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:200: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:214: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:227: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:247: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:19:269: Q000 Double quotes found but single quotes preferred
+E     ./launch/elderly_home.launch.py:20:100: E501 line too long (115 > 99 characters)
+E     ./launch/geofence.launch.py:14:49: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:15:50: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:15:60: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:17:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:18:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:18:64: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:19:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:19:65: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:20:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:20:59: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:21:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:21:65: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:22:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:22:58: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:23:31: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:23:61: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:26:17: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:26:45: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:27:14: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:27:41: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:29:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:29:49: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:30:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:30:52: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:31:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:31:46: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:32:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:32:67: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:32:100: E501 line too long (104 > 99 characters)
+E     ./launch/geofence.launch.py:33:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:33:68: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:33:100: E501 line too long (106 > 99 characters)
+E     ./launch/geofence.launch.py:34:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:34:62: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:35:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:35:68: Q000 Double quotes found but single quotes preferred
+E     ./launch/geofence.launch.py:35:100: E501 line too long (106 > 99 characters)
+E     ./launch/slam_mapping.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:11:54: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:12:47: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:12:57: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:18:17: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:19:17: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:23:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:24:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:24:29: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:25:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:25:26: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:26:13: Q000 Double quotes found but single quotes preferred
+E     ./launch/slam_mapping.launch.py:26:38: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:16:23: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:16:46: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:16:62: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:17:23: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:17:46: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:17:62: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:18:23: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:18:46: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:18:56: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:18:78: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:18:100: E501 line too long (103 > 99 characters)
+E     ./setup.py:19:23: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:19:46: Q000 Double quotes found but single quotes preferred
+E     ./setup.py:19:62: Q000 Double quotes found but single quotes preferred
+E     ./test/test_geofence.py:5:1: I101 Imported names are in the wrong order. Should be aggregate_zone_results, classify_zone, distance_to_polygon, load_obstacles, point_in_polygon, STATE_DANGER, STATE_SAFE, STATE_WARNING
+E     ./test/test_geofence.py:19:100: E501 line too long (148 > 99 characters)
+E     ./test/test_geofence.py:20:100: E501 line too long (160 > 99 characters)
+E   assert 1 == 0
+----------------------------- Captured stdout call -----------------------------
+
+./beidou_gazebo/elderly_geofence.py:25:1: D204 1 blank line required after class docstring
+    """One collision footprint represented by a planar polygon."""
+^
+
+./beidou_gazebo/elderly_geofence.py:107:1: D401 First line should be in imperative mood
+    """Verified elderly_final collision footprints."""
+^
+
+./beidou_gazebo/elderly_geofence.py:109:100: E501 line too long (102 > 99 characters)
+        ObstacleZone('final_flowerbed', ((-3.75, 1.25), (-1.25, 1.25), (-1.25, 2.75), (-3.75, 2.75))),
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:110:100: E501 line too long (103 > 99 characters)
+        ObstacleZone('final_bench_west', ((-4.8, -2.45), (-3.2, -2.45), (-3.2, -1.95), (-4.8, -1.95))),
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:111:100: E501 line too long (101 > 99 characters)
+        ObstacleZone('final_bench_east', ((-0.8, -2.45), (0.8, -2.45), (0.8, -1.95), (-0.8, -1.95))),
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:134:100: E501 line too long (105 > 99 characters)
+            configured = data.get('elderly_geofence', {}).get('ros__parameters', {}).get('obstacles', {})
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:181:100: E501 line too long (104 > 99 characters)
+        self.marker_array_pub = self.create_publisher(MarkerArray, '/elderly_geofence_markers', durable)
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:193:100: E501 line too long (113 > 99 characters)
+            self._publish_unknown(f'expected frame {self.map_frame}, got {message.header.frame_id or "<empty>"}')
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:281:100: E501 line too long (120 > 99 characters)
+            for distance, color in ((self.warning_distance, (1.0, 0.65, 0.0)), (self.danger_distance, (1.0, 0.0, 0.0))):
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:282:100: E501 line too long (179 > 99 characters)
+                expanded = ((min(xs)-distance, min(ys)-distance), (max(xs)+distance, min(ys)-distance), (max(xs)+distance, max(ys)+distance), (min(xs)-distance, max(ys)+distance))
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:283:92: E702 multiple statements on one line (semicolon)
+                markers.append(self._make_marker(zone.zone_id, marker_id, expanded, color)); marker_id += 1
+                                                                                           ^
+
+./beidou_gazebo/elderly_geofence.py:283:100: E501 line too long (107 > 99 characters)
+                markers.append(self._make_marker(zone.zone_id, marker_id, expanded, color)); marker_id += 1
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:284:100: E501 line too long (117 > 99 characters)
+            markers.append(self._make_marker(zone.zone_id, marker_id, zone.polygon, (0.2, 0.8, 0.2))); marker_id += 1
+                                                                                                   ^
+
+./beidou_gazebo/elderly_geofence.py:284:102: E702 multiple statements on one line (semicolon)
+            markers.append(self._make_marker(zone.zone_id, marker_id, zone.polygon, (0.2, 0.8, 0.2))); marker_id += 1
+                                                                                                     ^
+
+./beidou_gazebo/elderly_geofence.py:286:100: E501 line too long (105 > 99 characters)
+            marker = self._make_marker('elderly_position', marker_id, (), (0.1, 0.8, 1.0), Marker.SPHERE)
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:9:1: E302 expected 2 blank lines, found 1
+def generate_launch_description():
+^
+
+./launch/elderly_final.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+    package_share = get_package_share_directory("beidou_gazebo")
+                                                ^
+
+./launch/elderly_final.launch.py:11:52: Q000 Double quotes found but single quotes preferred
+    ros_gz_sim_share = get_package_share_directory("ros_gz_sim")
+                                                   ^
+
+./launch/elderly_final.launch.py:12:41: Q000 Double quotes found but single quotes preferred
+    world = os.path.join(package_share, "worlds", "elderly_final.sdf")
+                                        ^
+
+./launch/elderly_final.launch.py:12:51: Q000 Double quotes found but single quotes preferred
+    world = os.path.join(package_share, "worlds", "elderly_final.sdf")
+                                                  ^
+
+./launch/elderly_final.launch.py:13:100: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:13:100: E501 line too long (183 > 99 characters)
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:13:110: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                             ^
+
+./launch/elderly_final.launch.py:13:150: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                                                                     ^
+
+./launch/elderly_final.launch.py:13:161: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                                                                                ^
+
+./launch/elderly_final.launch.py:14:32: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                               ^
+
+./launch/elderly_final.launch.py:14:60: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                           ^
+
+./launch/elderly_final.launch.py:14:85: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                    ^
+
+./launch/elderly_final.launch.py:14:100: E501 line too long (180 > 99 characters)
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:14:111: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                              ^
+
+./launch/elderly_final.launch.py:14:172: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                                                                                           ^
+
+./launch/elderly_final.launch.py:15:35: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                  ^
+
+./launch/elderly_final.launch.py:15:63: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                              ^
+
+./launch/elderly_final.launch.py:15:88: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                       ^
+
+./launch/elderly_final.launch.py:15:100: E501 line too long (183 > 99 characters)
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:15:117: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                                    ^
+
+./launch/elderly_final.launch.py:15:175: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                                                                                              ^
+
+./launch/elderly_final.launch.py:16:32: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                               ^
+
+./launch/elderly_final.launch.py:16:60: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                           ^
+
+./launch/elderly_final.launch.py:16:85: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                    ^
+
+./launch/elderly_final.launch.py:16:100: E501 line too long (175 > 99 characters)
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:16:111: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                              ^
+
+./launch/elderly_final.launch.py:16:167: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                                                                                      ^
+
+./launch/elderly_final.launch.py:17:30: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                             ^
+
+./launch/elderly_final.launch.py:17:58: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                         ^
+
+./launch/elderly_final.launch.py:17:83: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                  ^
+
+./launch/elderly_final.launch.py:17:100: E501 line too long (168 > 99 characters)
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:17:107: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                          ^
+
+./launch/elderly_final.launch.py:17:160: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                                                                               ^
+
+./launch/elderly_final.launch.py:18:33: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                ^
+
+./launch/elderly_final.launch.py:18:61: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                            ^
+
+./launch/elderly_final.launch.py:18:86: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                     ^
+
+./launch/elderly_final.launch.py:18:100: E501 line too long (177 > 99 characters)
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:18:113: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                                ^
+
+./launch/elderly_final.launch.py:18:169: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                                                                                        ^
+
+./launch/elderly_final.launch.py:19:29: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                            ^
+
+./launch/elderly_final.launch.py:19:51: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                  ^
+
+./launch/elderly_final.launch.py:19:86: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                     ^
+
+./launch/elderly_final.launch.py:19:100: E501 line too long (277 > 99 characters)
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_final.launch.py:19:116: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                   ^
+
+./launch/elderly_final.launch.py:19:123: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                          ^
+
+./launch/elderly_final.launch.py:19:128: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                               ^
+
+./launch/elderly_final.launch.py:19:135: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                      ^
+
+./launch/elderly_final.launch.py:19:140: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                           ^
+
+./launch/elderly_final.launch.py:19:147: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                  ^
+
+./launch/elderly_final.launch.py:19:155: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                          ^
+
+./launch/elderly_final.launch.py:19:165: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                    ^
+
+./launch/elderly_final.launch.py:19:170: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                         ^
+
+./launch/elderly_final.launch.py:19:181: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                    ^
+
+./launch/elderly_final.launch.py:19:186: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                         ^
+
+./launch/elderly_final.launch.py:19:195: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                  ^
+
+./launch/elderly_final.launch.py:19:200: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                       ^
+
+./launch/elderly_final.launch.py:19:214: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                     ^
+
+./launch/elderly_final.launch.py:19:227: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                  ^
+
+./launch/elderly_final.launch.py:19:247: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                                      ^
+
+./launch/elderly_final.launch.py:19:269: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                                                            ^
+
+./launch/elderly_final.launch.py:20:100: E501 line too long (115 > 99 characters)
+    return LaunchDescription([gazebo, scan_bridge, cmd_vel_bridge, odom_bridge, tf_bridge, clock_bridge, lidar_tf])
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:9:1: E302 expected 2 blank lines, found 1
+def generate_launch_description():
+^
+
+./launch/elderly_home.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+    package_share = get_package_share_directory("beidou_gazebo")
+                                                ^
+
+./launch/elderly_home.launch.py:11:52: Q000 Double quotes found but single quotes preferred
+    ros_gz_sim_share = get_package_share_directory("ros_gz_sim")
+                                                   ^
+
+./launch/elderly_home.launch.py:12:41: Q000 Double quotes found but single quotes preferred
+    world = os.path.join(package_share, "worlds", "elderly_home.sdf")
+                                        ^
+
+./launch/elderly_home.launch.py:12:51: Q000 Double quotes found but single quotes preferred
+    world = os.path.join(package_share, "worlds", "elderly_home.sdf")
+                                                  ^
+
+./launch/elderly_home.launch.py:13:100: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:13:100: E501 line too long (183 > 99 characters)
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:13:110: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                             ^
+
+./launch/elderly_home.launch.py:13:150: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                                                                     ^
+
+./launch/elderly_home.launch.py:13:161: Q000 Double quotes found but single quotes preferred
+    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())
+                                                                                                                                                                ^
+
+./launch/elderly_home.launch.py:14:32: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                               ^
+
+./launch/elderly_home.launch.py:14:60: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                           ^
+
+./launch/elderly_home.launch.py:14:85: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                    ^
+
+./launch/elderly_home.launch.py:14:100: E501 line too long (180 > 99 characters)
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:14:111: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                              ^
+
+./launch/elderly_home.launch.py:14:172: Q000 Double quotes found but single quotes preferred
+    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")
+                                                                                                                                                                           ^
+
+./launch/elderly_home.launch.py:15:35: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                  ^
+
+./launch/elderly_home.launch.py:15:63: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                              ^
+
+./launch/elderly_home.launch.py:15:88: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                       ^
+
+./launch/elderly_home.launch.py:15:100: E501 line too long (183 > 99 characters)
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:15:117: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                                    ^
+
+./launch/elderly_home.launch.py:15:175: Q000 Double quotes found but single quotes preferred
+    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")
+                                                                                                                                                                              ^
+
+./launch/elderly_home.launch.py:16:32: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                               ^
+
+./launch/elderly_home.launch.py:16:60: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                           ^
+
+./launch/elderly_home.launch.py:16:85: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                    ^
+
+./launch/elderly_home.launch.py:16:100: E501 line too long (175 > 99 characters)
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:16:111: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                              ^
+
+./launch/elderly_home.launch.py:16:167: Q000 Double quotes found but single quotes preferred
+    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")
+                                                                                                                                                                      ^
+
+./launch/elderly_home.launch.py:17:30: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                             ^
+
+./launch/elderly_home.launch.py:17:58: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                         ^
+
+./launch/elderly_home.launch.py:17:83: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                  ^
+
+./launch/elderly_home.launch.py:17:100: E501 line too long (168 > 99 characters)
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:17:107: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                          ^
+
+./launch/elderly_home.launch.py:17:160: Q000 Double quotes found but single quotes preferred
+    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")
+                                                                                                                                                               ^
+
+./launch/elderly_home.launch.py:18:33: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                ^
+
+./launch/elderly_home.launch.py:18:61: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                            ^
+
+./launch/elderly_home.launch.py:18:86: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                     ^
+
+./launch/elderly_home.launch.py:18:100: E501 line too long (177 > 99 characters)
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:18:113: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                                ^
+
+./launch/elderly_home.launch.py:18:169: Q000 Double quotes found but single quotes preferred
+    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")
+                                                                                                                                                                        ^
+
+./launch/elderly_home.launch.py:19:29: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                            ^
+
+./launch/elderly_home.launch.py:19:51: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                  ^
+
+./launch/elderly_home.launch.py:19:86: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                     ^
+
+./launch/elderly_home.launch.py:19:100: E501 line too long (277 > 99 characters)
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                   ^
+
+./launch/elderly_home.launch.py:19:116: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                   ^
+
+./launch/elderly_home.launch.py:19:123: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                          ^
+
+./launch/elderly_home.launch.py:19:128: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                               ^
+
+./launch/elderly_home.launch.py:19:135: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                      ^
+
+./launch/elderly_home.launch.py:19:140: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                           ^
+
+./launch/elderly_home.launch.py:19:147: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                  ^
+
+./launch/elderly_home.launch.py:19:155: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                          ^
+
+./launch/elderly_home.launch.py:19:165: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                    ^
+
+./launch/elderly_home.launch.py:19:170: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                         ^
+
+./launch/elderly_home.launch.py:19:181: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                    ^
+
+./launch/elderly_home.launch.py:19:186: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                         ^
+
+./launch/elderly_home.launch.py:19:195: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                  ^
+
+./launch/elderly_home.launch.py:19:200: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                       ^
+
+./launch/elderly_home.launch.py:19:214: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                     ^
+
+./launch/elderly_home.launch.py:19:227: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                  ^
+
+./launch/elderly_home.launch.py:19:247: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                                      ^
+
+./launch/elderly_home.launch.py:19:269: Q000 Double quotes found but single quotes preferred
+    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")
+                                                                                                                                                                                                                                                                            ^
+
+./launch/elderly_home.launch.py:20:100: E501 line too long (115 > 99 characters)
+    return LaunchDescription([gazebo, scan_bridge, cmd_vel_bridge, odom_bridge, tf_bridge, clock_bridge, lidar_tf])
+                                                                                                   ^
+
+./launch/geofence.launch.py:14:49: Q000 Double quotes found but single quotes preferred
+    package_share = get_package_share_directory("beidou_gazebo")
+                                                ^
+
+./launch/geofence.launch.py:15:50: Q000 Double quotes found but single quotes preferred
+    default_config = os.path.join(package_share, "config", "elderly_geofence.yaml")
+                                                 ^
+
+./launch/geofence.launch.py:15:60: Q000 Double quotes found but single quotes preferred
+    default_config = os.path.join(package_share, "config", "elderly_geofence.yaml")
+                                                           ^
+
+./launch/geofence.launch.py:17:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("obstacle_config", default_value=default_config),
+                              ^
+
+./launch/geofence.launch.py:18:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("danger_distance", default_value="0.5"),
+                              ^
+
+./launch/geofence.launch.py:18:64: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("danger_distance", default_value="0.5"),
+                                                               ^
+
+./launch/geofence.launch.py:19:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("warning_distance", default_value="1.0"),
+                              ^
+
+./launch/geofence.launch.py:19:65: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("warning_distance", default_value="1.0"),
+                                                                ^
+
+./launch/geofence.launch.py:20:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("hysteresis", default_value="0.1"),
+                              ^
+
+./launch/geofence.launch.py:20:59: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("hysteresis", default_value="0.1"),
+                                                          ^
+
+./launch/geofence.launch.py:21:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("position_timeout", default_value="1.0"),
+                              ^
+
+./launch/geofence.launch.py:21:65: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("position_timeout", default_value="1.0"),
+                                                                ^
+
+./launch/geofence.launch.py:22:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("map_frame", default_value="map"),
+                              ^
+
+./launch/geofence.launch.py:22:58: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("map_frame", default_value="map"),
+                                                         ^
+
+./launch/geofence.launch.py:23:31: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("use_sim_time", default_value="true"),
+                              ^
+
+./launch/geofence.launch.py:23:61: Q000 Double quotes found but single quotes preferred
+        DeclareLaunchArgument("use_sim_time", default_value="true"),
+                                                            ^
+
+./launch/geofence.launch.py:26:17: Q000 Double quotes found but single quotes preferred
+        package="beidou_gazebo", executable="elderly_geofence",
+                ^
+
+./launch/geofence.launch.py:26:45: Q000 Double quotes found but single quotes preferred
+        package="beidou_gazebo", executable="elderly_geofence",
+                                            ^
+
+./launch/geofence.launch.py:27:14: Q000 Double quotes found but single quotes preferred
+        name="elderly_geofence", output="screen",
+             ^
+
+./launch/geofence.launch.py:27:41: Q000 Double quotes found but single quotes preferred
+        name="elderly_geofence", output="screen",
+                                        ^
+
+./launch/geofence.launch.py:29:13: Q000 Double quotes found but single quotes preferred
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
+            ^
+
+./launch/geofence.launch.py:29:49: Q000 Double quotes found but single quotes preferred
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
+                                                ^
+
+./launch/geofence.launch.py:30:13: Q000 Double quotes found but single quotes preferred
+            "obstacle_config": LaunchConfiguration("obstacle_config"),
+            ^
+
+./launch/geofence.launch.py:30:52: Q000 Double quotes found but single quotes preferred
+            "obstacle_config": LaunchConfiguration("obstacle_config"),
+                                                   ^
+
+./launch/geofence.launch.py:31:13: Q000 Double quotes found but single quotes preferred
+            "map_frame": LaunchConfiguration("map_frame"),
+            ^
+
+./launch/geofence.launch.py:31:46: Q000 Double quotes found but single quotes preferred
+            "map_frame": LaunchConfiguration("map_frame"),
+                                             ^
+
+./launch/geofence.launch.py:32:13: Q000 Double quotes found but single quotes preferred
+            "danger_distance": ParameterValue(LaunchConfiguration("danger_distance"), value_type=float),
+            ^
+
+./launch/geofence.launch.py:32:67: Q000 Double quotes found but single quotes preferred
+            "danger_distance": ParameterValue(LaunchConfiguration("danger_distance"), value_type=float),
+                                                                  ^
+
+./launch/geofence.launch.py:32:100: E501 line too long (104 > 99 characters)
+            "danger_distance": ParameterValue(LaunchConfiguration("danger_distance"), value_type=float),
+                                                                                                   ^
+
+./launch/geofence.launch.py:33:13: Q000 Double quotes found but single quotes preferred
+            "warning_distance": ParameterValue(LaunchConfiguration("warning_distance"), value_type=float),
+            ^
+
+./launch/geofence.launch.py:33:68: Q000 Double quotes found but single quotes preferred
+            "warning_distance": ParameterValue(LaunchConfiguration("warning_distance"), value_type=float),
+                                                                   ^
+
+./launch/geofence.launch.py:33:100: E501 line too long (106 > 99 characters)
+            "warning_distance": ParameterValue(LaunchConfiguration("warning_distance"), value_type=float),
+                                                                                                   ^
+
+./launch/geofence.launch.py:34:13: Q000 Double quotes found but single quotes preferred
+            "hysteresis": ParameterValue(LaunchConfiguration("hysteresis"), value_type=float),
+            ^
+
+./launch/geofence.launch.py:34:62: Q000 Double quotes found but single quotes preferred
+            "hysteresis": ParameterValue(LaunchConfiguration("hysteresis"), value_type=float),
+                                                             ^
+
+./launch/geofence.launch.py:35:13: Q000 Double quotes found but single quotes preferred
+            "position_timeout": ParameterValue(LaunchConfiguration("position_timeout"), value_type=float),
+            ^
+
+./launch/geofence.launch.py:35:68: Q000 Double quotes found but single quotes preferred
+            "position_timeout": ParameterValue(LaunchConfiguration("position_timeout"), value_type=float),
+                                                                   ^
+
+./launch/geofence.launch.py:35:100: E501 line too long (106 > 99 characters)
+            "position_timeout": ParameterValue(LaunchConfiguration("position_timeout"), value_type=float),
+                                                                                                   ^
+
+./launch/slam_mapping.launch.py:10:49: Q000 Double quotes found but single quotes preferred
+    package_share = get_package_share_directory("beidou_gazebo")
+                                                ^
+
+./launch/slam_mapping.launch.py:11:54: Q000 Double quotes found but single quotes preferred
+    slam_toolbox_share = get_package_share_directory("slam_toolbox")
+                                                     ^
+
+./launch/slam_mapping.launch.py:12:47: Q000 Double quotes found but single quotes preferred
+    slam_params = os.path.join(package_share, "config", "slam_params.yaml")
+                                              ^
+
+./launch/slam_mapping.launch.py:12:57: Q000 Double quotes found but single quotes preferred
+    slam_params = os.path.join(package_share, "config", "slam_params.yaml")
+                                                        ^
+
+./launch/slam_mapping.launch.py:18:17: Q000 Double quotes found but single quotes preferred
+                "launch",
+                ^
+
+./launch/slam_mapping.launch.py:19:17: Q000 Double quotes found but single quotes preferred
+                "online_async_launch.py",
+                ^
+
+./launch/slam_mapping.launch.py:23:13: Q000 Double quotes found but single quotes preferred
+            "slam_params_file": slam_params,
+            ^
+
+./launch/slam_mapping.launch.py:24:13: Q000 Double quotes found but single quotes preferred
+            "use_sim_time": "true",
+            ^
+
+./launch/slam_mapping.launch.py:24:29: Q000 Double quotes found but single quotes preferred
+            "use_sim_time": "true",
+                            ^
+
+./launch/slam_mapping.launch.py:25:13: Q000 Double quotes found but single quotes preferred
+            "autostart": "true",
+            ^
+
+./launch/slam_mapping.launch.py:25:26: Q000 Double quotes found but single quotes preferred
+            "autostart": "true",
+                         ^
+
+./launch/slam_mapping.launch.py:26:13: Q000 Double quotes found but single quotes preferred
+            "use_lifecycle_manager": "false",
+            ^
+
+./launch/slam_mapping.launch.py:26:38: Q000 Double quotes found but single quotes preferred
+            "use_lifecycle_manager": "false",
+                                     ^
+
+./setup.py:16:23: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
+                      ^
+
+./setup.py:16:46: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
+                                             ^
+
+./setup.py:16:62: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
+                                                             ^
+
+./setup.py:17:23: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),
+                      ^
+
+./setup.py:17:46: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),
+                                             ^
+
+./setup.py:17:62: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),
+                                                             ^
+
+./setup.py:18:23: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),
+                      ^
+
+./setup.py:18:46: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),
+                                             ^
+
+./setup.py:18:56: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),
+                                                       ^
+
+./setup.py:18:78: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),
+                                                                             ^
+
+./setup.py:18:100: E501 line too long (103 > 99 characters)
+        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),
+                                                                                                   ^
+
+./setup.py:19:23: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
+                      ^
+
+./setup.py:19:46: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
+                                             ^
+
+./setup.py:19:62: Q000 Double quotes found but single quotes preferred
+        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
+                                                             ^
+
+./test/test_geofence.py:5:1: I101 Imported names are in the wrong order. Should be aggregate_zone_results, classify_zone, distance_to_polygon, load_obstacles, point_in_polygon, STATE_DANGER, STATE_SAFE, STATE_WARNING
+from beidou_gazebo.elderly_geofence import (
+^
+
+./test/test_geofence.py:19:100: E501 line too long (148 > 99 characters)
+        {'zone_id': 'final_table', 'state': classify_zone(distance_to_polygon(3, 3, TABLE), .5, 1.0), 'distance': distance_to_polygon(3, 3, TABLE)},
+                                                                                                   ^
+
+./test/test_geofence.py:20:100: E501 line too long (160 > 99 characters)
+        {'zone_id': 'final_flowerbed', 'state': classify_zone(distance_to_polygon(3, 3, FLOWERBED), .5, 1.0), 'distance': distance_to_polygon(3, 3, FLOWERBED)},
+                                                                                                   ^
+
+1     D204 1 blank line required after class docstring
+1     D401 First line should be in imperative mood
+2     E302 expected 2 blank lines, found 1
+33    E501 line too long (102 > 99 characters)
+2     E702 multiple statements on one line (semicolon)
+1     I101 Imported names are in the wrong order. Should be aggregate_zone_results, classify_zone, distance_to_polygon, load_obstacles, point_in_polygon, STATE_DANGER, STATE_SAFE, STATE_WARNING
+166   Q000 Double quotes found but single quotes preferred
+
+34 files checked
+206 errors
+
+'D'-type errors: 2
+'E'-type errors: 37
+'I'-type errors: 1
+'Q'-type errors: 166
+
+Checked files:
+
+* ./setup.py
+* ./test/test_pep257.py
+* ./test/test_beidou_transform.py
+* ./test/test_elderly_motion_estimator.py
+* ./test/test_flake8.py
+* ./test/test_elderly_walker.py
+* ./test/test_geofence.py
+* ./test/test_guard_navigation.py
+* ./test/test_copyright.py
+* ./test/test_companion_navigation.py
+* ./test/test_voice_alarm.py
+* ./test/test_elderly_companion_v2.py
+* ./launch/nav2_final_navigation.launch.py
+* ./launch/guard_navigation.launch.py
+* ./launch/companion_v2.launch.py
+* ./launch/geofence.launch.py
+* ./launch/voice_alarm.launch.py
+* ./launch/slam_mapping.launch.py
+* ./launch/elderly_beidou.launch.py
+* ./launch/companion_navigation.launch.py
+* ./launch/elderly_walker.launch.py
+* ./launch/nav2_navigation.launch.py
+* ./launch/elderly_final.launch.py
+* ./launch/elderly_home.launch.py
+* ./beidou_gazebo/elderly_companion_navigation.py
+* ./beidou_gazebo/elderly_voice_alarm.py
+* ./beidou_gazebo/piper_chinese_tts.py
+* ./beidou_gazebo/elderly_guard_navigation.py
+* ./beidou_gazebo/elderly_companion_v2.py
+* ./beidou_gazebo/elderly_geofence.py
+* ./beidou_gazebo/elderly_motion_estimator.py
+* ./beidou_gazebo/elderly_walker.py
+* ./beidou_gazebo/beidou_position_publisher.py
+* ./beidou_gazebo/__init__.py
+_________________________________ test_pep257 __________________________________
+test/test_pep257.py:23: in test_pep257
+    assert rc == 0, 'Found code style errors / warnings'
+E   AssertionError: Found code style errors / warnings
+E   assert 1 == 0
+----------------------------- Captured stdout call -----------------------------
+checking ./beidou_gazebo/__init__.py
+checking ./beidou_gazebo/beidou_position_publisher.py
+checking ./beidou_gazebo/elderly_companion_navigation.py
+checking ./beidou_gazebo/elderly_companion_v2.py
+checking ./beidou_gazebo/elderly_geofence.py
+checking ./beidou_gazebo/elderly_guard_navigation.py
+checking ./beidou_gazebo/elderly_motion_estimator.py
+checking ./beidou_gazebo/elderly_voice_alarm.py
+checking ./beidou_gazebo/elderly_walker.py
+checking ./beidou_gazebo/piper_chinese_tts.py
+checking ./launch/companion_navigation.launch.py
+checking ./launch/companion_v2.launch.py
+checking ./launch/elderly_beidou.launch.py
+checking ./launch/elderly_final.launch.py
+checking ./launch/elderly_home.launch.py
+checking ./launch/elderly_walker.launch.py
+checking ./launch/geofence.launch.py
+checking ./launch/guard_navigation.launch.py
+checking ./launch/nav2_final_navigation.launch.py
+checking ./launch/nav2_navigation.launch.py
+checking ./launch/slam_mapping.launch.py
+checking ./launch/voice_alarm.launch.py
+checking ./setup.py
+checking ./test/test_beidou_transform.py
+checking ./test/test_companion_navigation.py
+checking ./test/test_copyright.py
+checking ./test/test_elderly_companion_v2.py
+checking ./test/test_elderly_motion_estimator.py
+checking ./test/test_elderly_walker.py
+checking ./test/test_flake8.py
+checking ./test/test_geofence.py
+checking ./test/test_guard_navigation.py
+checking ./test/test_pep257.py
+checking ./test/test_voice_alarm.py
+checking test/test_beidou_transform.py
+checking test/test_companion_navigation.py
+checking test/test_copyright.py
+checking test/test_elderly_companion_v2.py
+checking test/test_elderly_motion_estimator.py
+checking test/test_elderly_walker.py
+checking test/test_flake8.py
+checking test/test_geofence.py
+checking test/test_guard_navigation.py
+checking test/test_pep257.py
+checking test/test_voice_alarm.py
+----------------------------- Captured stderr call -----------------------------
+./beidou_gazebo/elderly_companion_v2.py:39 in public function `calculate_dynamic_follow_target`: D213: Multi-line docstring summary should start at the second line
+./beidou_gazebo/elderly_geofence.py:25 in public class `ObstacleZone`: D204: 1 blank line required after class docstring (found 0)
+./beidou_gazebo/elderly_geofence.py:107 in private function `_default_obstacles`: D401: First line should be in imperative mood (perhaps 'Verify', not 'Verified')
+3 errors
+- generated xml file: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml -
+=========================== short test summary info ============================
+=============================== warnings summary ===============================
+FAILED test/test_flake8.py::test_flake8 - AssertionError: Found 206 code styl...
+FAILED test/test_pep257.py::test_pep257 - AssertionError: Found code style er...
+============= 2 failed, 79 passed, 1 skipped, 18 warnings in 0.93s =============
+test/test_flake8.py: 18 warnings
+  Warning: This process (pid=16489) is multi-threaded, use of fork() may lead to deadlocks in the child.
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

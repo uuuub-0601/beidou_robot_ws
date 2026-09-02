@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/ament_cmake_core/beidou_gazebo_pose_bridgeConfig.cmake

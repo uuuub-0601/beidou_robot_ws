@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_generator_py/beidou_interfaces/beidou_interfaces_s__rosidl_typesupport_c.so" "TARGETS" "beidou_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/beidou_interfaces")

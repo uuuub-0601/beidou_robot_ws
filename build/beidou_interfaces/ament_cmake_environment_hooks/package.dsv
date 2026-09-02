@@ -1,0 +1,4 @@
+source;share/beidou_interfaces/local_setup.bash
+source;share/beidou_interfaces/local_setup.dsv
+source;share/beidou_interfaces/local_setup.sh
+source;share/beidou_interfaces/local_setup.zsh

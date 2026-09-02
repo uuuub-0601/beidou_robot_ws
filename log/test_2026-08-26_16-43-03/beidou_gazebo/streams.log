@@ -1,0 +1,15 @@
+[0.139s] Invoking command in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTEST_ADDOPTS=--tb=short --junit-xml=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml --junit-prefix=beidou_gazebo -o cache_dir=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache -k "guard_navigation or geofence or yaw or robot_rotation or models_are" PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest
+[0.794s] ============================= test session starts ==============================
+[0.794s] platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+[0.794s] cachedir: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache
+[0.794s] rootdir: /home/ubbbb/beidou_robot_ws/src/beidou_gazebo
+[0.794s] plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-lint-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.12, launch-testing-3.4.11, ament-pep257-0.17.5, colcon-core-0.21.0, typeguard-4.1.5, cov-4.1.0
+[0.795s] collected 28 items / 3 deselected / 25 selected
+[0.795s] 
+[0.800s] test/test_beidou_transform.py ....                                       [ 16%]
+[0.803s] test/test_geofence.py ......                                             [ 40%]
+[0.810s] test/test_guard_navigation.py ...............                            [100%]
+[0.810s] 
+[0.810s] - generated xml file: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml -
+[0.811s] ======================= 25 passed, 3 deselected in 0.45s =======================
+[0.901s] Invoked command in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTEST_ADDOPTS=--tb=short --junit-xml=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml --junit-prefix=beidou_gazebo -o cache_dir=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache -k "guard_navigation or geofence or yaw or robot_rotation or models_are" PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest

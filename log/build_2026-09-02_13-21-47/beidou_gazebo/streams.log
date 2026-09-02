@@ -1,0 +1,28 @@
+[1.457s] Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo': AMENT_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages:/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/build --no-deps symlink_data
+[1.807s] running develop
+[2.014s] running egg_info
+[2.035s] writing beidou_gazebo.egg-info/PKG-INFO
+[2.036s] writing dependency_links to beidou_gazebo.egg-info/dependency_links.txt
+[2.036s] writing entry points to beidou_gazebo.egg-info/entry_points.txt
+[2.038s] writing requirements to beidou_gazebo.egg-info/requires.txt
+[2.038s] writing top-level names to beidou_gazebo.egg-info/top_level.txt
+[2.096s] reading manifest file 'beidou_gazebo.egg-info/SOURCES.txt'
+[2.097s] writing manifest file 'beidou_gazebo.egg-info/SOURCES.txt'
+[2.120s] running build_ext
+[2.121s] Creating /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages/beidou-gazebo.egg-link (link to .)
+[2.122s] Installing beidou_position_publisher script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.122s] Installing elderly_companion_navigation script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.123s] Installing elderly_companion_v2 script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.123s] Installing elderly_geofence script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.123s] Installing elderly_guard_navigation script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.123s] Installing elderly_motion_estimator script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.123s] Installing elderly_navigation_handoff script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.124s] Installing elderly_voice_alarm script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.124s] Installing elderly_walker script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.124s] Installing piper_chinese_tts script to /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/beidou_gazebo
+[2.124s] 
+[2.124s] Installed /home/ubbbb/beidou_robot_ws/build/beidou_gazebo
+[2.124s] running symlink_data
+[2.125s] symbolically linking /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/launch/navigation_handoff.launch.py -> /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/launch
+[2.128s] symbolically linking /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/config/elderly_navigation_handoff.yaml -> /home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/config
+[2.179s] Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo' returned '0': AMENT_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages:/home/ubbbb/beidou_robot_ws/install/beidou_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/build --no-deps symlink_data

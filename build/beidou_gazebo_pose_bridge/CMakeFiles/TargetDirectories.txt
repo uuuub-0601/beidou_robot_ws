@@ -1,0 +1,10 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/uninstall.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/beidou_gazebo_pose_bridge_uninstall.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/elderly_pose_bridge.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/test.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/edit_cache.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/rebuild_cache.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/list_install_components.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/install.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/install/local.dir
+/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/CMakeFiles/install/strip.dir

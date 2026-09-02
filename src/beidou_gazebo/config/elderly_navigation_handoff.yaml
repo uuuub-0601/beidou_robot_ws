@@ -1,0 +1,5 @@
+elderly_navigation_handoff:
+  ros__parameters:
+    safe_recovery_time: 3.0
+    transition_timeout: 5.0
+    guard_goal_timeout: 30.0

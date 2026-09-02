@@ -1,0 +1,212 @@
+"""Continuously walk the Gazebo elderly model around a waypoint route."""
+
+import math
+
+from geometry_msgs.msg import Twist
+import rclpy
+from rclpy.node import Node
+from rclpy.signals import SignalHandlerOptions
+from tf2_msgs.msg import TFMessage
+
+
+DEFAULT_WAYPOINTS = (3.0, 3.0, 5.0, 3.0, 5.0, 5.0, 3.0, 5.0)
+
+
+def normalize_angle(angle):
+    """Wrap an angle to [-pi, pi]."""
+    return math.atan2(math.sin(angle), math.cos(angle))
+
+
+def advance_waypoint(x, y, waypoints, index, tolerance):
+    """Advance cyclically when the current waypoint has been reached."""
+    target_x, target_y = waypoints[index]
+    if math.hypot(target_x - x, target_y - y) <= tolerance:
+        return (index + 1) % len(waypoints)
+    return index
+
+
+def calculate_walking_command(
+    x,
+    y,
+    yaw,
+    target_x,
+    target_y,
+    walking_speed,
+    turn_speed,
+    turn_gain,
+    minimum_speed_ratio,
+):
+    """Return smooth body-frame forward and angular speeds to a target."""
+    desired_yaw = math.atan2(target_y - y, target_x - x)
+    heading_error = normalize_angle(desired_yaw - yaw)
+    angular = max(
+        -turn_speed,
+        min(turn_speed, turn_gain * heading_error),
+    )
+    # Retain some forward speed at corners so turns form continuous arcs.
+    speed_ratio = max(
+        minimum_speed_ratio,
+        0.5 * (1.0 + math.cos(heading_error)),
+    )
+    return walking_speed * speed_ratio, angular, heading_error
+
+
+def quaternion_to_yaw(x, y, z, w):
+    """Extract planar yaw from a quaternion."""
+    sin_yaw = 2.0 * (w * z + x * y)
+    cos_yaw = 1.0 - 2.0 * (y * y + z * z)
+    return math.atan2(sin_yaw, cos_yaw)
+
+
+class ElderlyWalker(Node):
+    """Command native Gazebo velocity control along a cyclic route."""
+
+    def __init__(self):
+        super().__init__('elderly_walker')
+        defaults = (
+            ('walking_speed', 0.4),
+            ('turn_speed', 0.8),
+            ('turn_gain', 1.5),
+            ('minimum_speed_ratio', 0.15),
+            ('waypoint_tolerance', 0.15),
+            ('control_frequency', 20.0),
+            ('pose_timeout', 1.0),
+            ('elder_model_name', 'elder'),
+            ('pose_topic', '/elderly_walker/gazebo_pose'),
+            ('waypoints', list(DEFAULT_WAYPOINTS)),
+        )
+        for name, value in defaults:
+            self.declare_parameter(name, value)
+
+        self.walking_speed = self._positive('walking_speed', maximum=1.0)
+        self.turn_speed = self._positive('turn_speed')
+        self.turn_gain = self._positive('turn_gain')
+        self.minimum_speed_ratio = float(
+            self.get_parameter('minimum_speed_ratio').value
+        )
+        if not 0.0 <= self.minimum_speed_ratio <= 1.0:
+            raise ValueError('minimum_speed_ratio must be in [0, 1]')
+        self.waypoint_tolerance = self._positive('waypoint_tolerance')
+        control_frequency = self._positive('control_frequency')
+        self.pose_timeout = self._positive('pose_timeout')
+        self.elder_model_name = str(
+            self.get_parameter('elder_model_name').value
+        )
+        pose_topic = str(self.get_parameter('pose_topic').value)
+        flattened = [
+            float(value)
+            for value in self.get_parameter('waypoints').value
+        ]
+        if len(flattened) < 2 or len(flattened) % 2:
+            raise ValueError('waypoints must contain x/y pairs')
+        self.waypoints = tuple(zip(flattened[::2], flattened[1::2]))
+
+        self.waypoint_index = 0
+        self.pose = None
+        self.last_pose_time = None
+        self.command_publisher = self.create_publisher(
+            Twist, '/elderly_walker/cmd_vel', 10
+        )
+        self.create_subscription(TFMessage, pose_topic, self._on_pose, 10)
+        self.timer = self.create_timer(
+            1.0 / control_frequency, self._control
+        )
+        self.get_logger().info(
+            f'Walking at {self.walking_speed:.2f} m/s through '
+            f'{len(self.waypoints)} cyclic waypoints'
+        )
+
+    def _positive(self, name, maximum=None):
+        value = float(self.get_parameter(name).value)
+        if value <= 0.0 or (maximum is not None and value > maximum):
+            suffix = f' and <= {maximum}' if maximum is not None else ''
+            raise ValueError(f'{name} must be > 0{suffix}')
+        return value
+
+    def _on_pose(self, message):
+        transform = next(
+            (
+                item
+                for item in message.transforms
+                if item.child_frame_id == self.elder_model_name
+            ),
+            None,
+        )
+        if transform is None:
+            return
+        translation = transform.transform.translation
+        rotation = transform.transform.rotation
+        self.pose = (
+            float(translation.x),
+            float(translation.y),
+            quaternion_to_yaw(
+                rotation.x,
+                rotation.y,
+                rotation.z,
+                rotation.w,
+            ),
+        )
+        self.last_pose_time = self.get_clock().now()
+
+    def _control(self):
+        if self.pose is None or self.last_pose_time is None:
+            self._publish_stop()
+            return
+        age = (self.get_clock().now() - self.last_pose_time).nanoseconds
+        if age > self.pose_timeout * 1e9:
+            self._publish_stop()
+            return
+
+        x, y, yaw = self.pose
+        previous_index = self.waypoint_index
+        self.waypoint_index = advance_waypoint(
+            x,
+            y,
+            self.waypoints,
+            self.waypoint_index,
+            self.waypoint_tolerance,
+        )
+        if self.waypoint_index != previous_index:
+            target = self.waypoints[self.waypoint_index]
+            self.get_logger().info(
+                f'Reached waypoint {previous_index}; continuing to '
+                f'({target[0]:.2f}, {target[1]:.2f})'
+            )
+
+        target_x, target_y = self.waypoints[self.waypoint_index]
+        linear, angular, _ = calculate_walking_command(
+            x,
+            y,
+            yaw,
+            target_x,
+            target_y,
+            self.walking_speed,
+            self.turn_speed,
+            self.turn_gain,
+            self.minimum_speed_ratio,
+        )
+        command = Twist()
+        command.linear.x = linear
+        command.angular.z = angular
+        self.command_publisher.publish(command)
+
+    def _publish_stop(self):
+        self.command_publisher.publish(Twist())
+
+    def stop(self):
+        """Stop the elderly model when this node exits."""
+        self._publish_stop()
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = ElderlyWalker()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.stop()
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()

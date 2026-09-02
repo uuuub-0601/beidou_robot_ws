@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+cachedir: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache
+rootdir: /home/ubbbb/beidou_robot_ws/src/beidou_gazebo
+plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-lint-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.12, launch-testing-3.4.11, ament-pep257-0.17.5, colcon-core-0.21.0, typeguard-4.1.5, cov-4.1.0
+collected 22 items / 3 deselected / 19 selected
+
+test/test_beidou_transform.py ....                                       [ 21%]
+test/test_geofence.py ......                                             [ 52%]
+test/test_guard_navigation.py .........                                  [100%]
+
+- generated xml file: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml -
+======================= 19 passed, 3 deselected in 0.44s =======================

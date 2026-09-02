@@ -1,0 +1,528 @@
+[0.000000] (-) TimerEvent: {}
+[0.000087] (beidou_gazebo) JobQueued: {'identifier': 'beidou_gazebo', 'dependencies': OrderedDict({'beidou_gazebo_pose_bridge': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge', 'beidou_gazebo': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo'})}
+[0.000606] (beidou_gazebo) JobStarted: {'identifier': 'beidou_gazebo'}
+[0.099836] (-) TimerEvent: {}
+[0.144289] (beidou_gazebo) Command: {'cmd': ['/usr/bin/python3', '-m', 'pytest'], 'cwd': '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://127.0.0.1:7897/', 'CODEX_CI': '1', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'no_proxy': 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1', 'LANGUAGE': 'zh_CN:en', 'USER': 'ubbbb', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'all_proxy': 'socks://127.0.0.1:7897/', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/ubbbb', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'en_US.UTF-8', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '2481', 'IM_CONFIG_CHECK_ENV': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'https_proxy': 'http://127.0.0.1:7897/', 'CODEX_PERMISSION_PROFILE': ':workspace', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'ubbbb', 'ALL_PROXY': 'socks://127.0.0.1:7897/', 'http_proxy': 'http://127.0.0.1:7897/', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'ubbbb', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/home/ubbbb/.local/bin:/home/ubbbb/.codex/packages/standalone/releases/0.149.1-x86_64-unknown-linux-musl/codex-path:/home/ubbbb/.codex/tmp/arg0/codex-arg0KR0Zl4:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/ubbbb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ubbbb/.local/bin:/home/ubbbb/.local/bin:/home/ubbbb/.local/bin', 'SESSION_MANAGER': 'local/ubbbb-FLMH-XX:@/tmp/.ICE-unix/2414,unix/ubbbb-FLMH-XX:/tmp/.ICE-unix/2414', 'CODEX_SESSION_ID': '01a03ca4-d7eb-7392-af75-ae1b0d435e40', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'en_US.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/ba70446d_95b2_4f84_b56a_92c7b7b76b36', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'en_US.UTF-8', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.CM33T3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.172', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '01a03ca4-d7eb-7392-af75-ae1b0d435e40', 'LC_MEASUREMENT': 'en_US.UTF-8', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'HTTP_PROXY': 'http://127.0.0.1:7897/', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'PYTHONDONTWRITEBYTECODE': '1', 'PYTEST_ADDOPTS': '--tb=short --junit-xml=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml --junit-prefix=beidou_gazebo -o cache_dir=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache'}, 'shell': False}
+[0.199966] (-) TimerEvent: {}
+[0.300198] (-) TimerEvent: {}
+[0.400434] (-) TimerEvent: {}
+[0.500692] (-) TimerEvent: {}
+[0.600938] (-) TimerEvent: {}
+[0.701173] (-) TimerEvent: {}
+[0.790718] (beidou_gazebo) StdoutLine: {'line': b'============================= test session starts ==============================\n'}
+[0.790987] (beidou_gazebo) StdoutLine: {'line': b'platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0\n'}
+[0.791087] (beidou_gazebo) StdoutLine: {'line': b'cachedir: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/.pytest_cache\n'}
+[0.791169] (beidou_gazebo) StdoutLine: {'line': b'rootdir: /home/ubbbb/beidou_robot_ws/src/beidou_gazebo\n'}
+[0.791253] (beidou_gazebo) StdoutLine: {'line': b'plugins: ament-copyright-0.17.5, ament-flake8-0.17.5, ament-lint-0.17.5, ament-xmllint-0.17.5, launch-testing-ros-0.26.12, launch-testing-3.4.11, ament-pep257-0.17.5, colcon-core-0.21.0, typeguard-4.1.5, cov-4.1.0\n'}
+[0.791337] (beidou_gazebo) StdoutLine: {'line': b'collected 32 items\n'}
+[0.791408] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[0.797180] (beidou_gazebo) StdoutLine: {'line': b'test/test_beidou_transform.py ....                                       [ 12%]\n'}
+[0.797900] (beidou_gazebo) StdoutLine: {'line': b'test/test_copyright.py s                                                 [ 15%]\n'}
+[0.801262] (-) TimerEvent: {}
+[0.901416] (-) TimerEvent: {}
+[0.979623] (beidou_gazebo) StdoutLine: {'line': b'test/test_flake8.py F                                                    [ 18%]\n'}
+[0.982555] (beidou_gazebo) StdoutLine: {'line': b'test/test_geofence.py ......                                             [ 37%]\n'}
+[0.988742] (beidou_gazebo) StdoutLine: {'line': b'test/test_guard_navigation.py ...............                            [ 84%]\n'}
+[1.001518] (-) TimerEvent: {}
+[1.038976] (beidou_gazebo) StdoutLine: {'line': b'test/test_pep257.py .                                                    [ 87%]\n'}
+[1.042879] (beidou_gazebo) StdoutLine: {'line': b'test/test_voice_alarm.py ....                                            [100%]\n'}
+[1.043108] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.043194] (beidou_gazebo) StdoutLine: {'line': b'=================================== FAILURES ===================================\n'}
+[1.043279] (beidou_gazebo) StdoutLine: {'line': b'_________________________________ test_flake8 __________________________________\n'}
+[1.043363] (beidou_gazebo) StdoutLine: {'line': b'test/test_flake8.py:23: in test_flake8\n'}
+[1.043439] (beidou_gazebo) StdoutLine: {'line': b'    assert rc == 0, \\\n'}
+[1.043509] (beidou_gazebo) StdoutLine: {'line': b'E   AssertionError: Found 89 code style errors / warnings:\n'}
+[1.043589] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:9:1: E302 expected 2 blank lines, found 1\n'}
+[1.043648] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:10:49: Q000 Double quotes found but single quotes preferred\n'}
+[1.043706] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:11:52: Q000 Double quotes found but single quotes preferred\n'}
+[1.043764] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:12:41: Q000 Double quotes found but single quotes preferred\n'}
+[1.043834] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:12:51: Q000 Double quotes found but single quotes preferred\n'}
+[1.043928] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:13:100: Q000 Double quotes found but single quotes preferred\n'}
+[1.043998] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:13:100: E501 line too long (183 > 99 characters)\n'}
+[1.044085] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:13:110: Q000 Double quotes found but single quotes preferred\n'}
+[1.044177] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:13:150: Q000 Double quotes found but single quotes preferred\n'}
+[1.044277] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:13:161: Q000 Double quotes found but single quotes preferred\n'}
+[1.044369] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:32: Q000 Double quotes found but single quotes preferred\n'}
+[1.044429] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:60: Q000 Double quotes found but single quotes preferred\n'}
+[1.044510] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:85: Q000 Double quotes found but single quotes preferred\n'}
+[1.044599] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:100: E501 line too long (180 > 99 characters)\n'}
+[1.044683] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:111: Q000 Double quotes found but single quotes preferred\n'}
+[1.044759] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:14:172: Q000 Double quotes found but single quotes preferred\n'}
+[1.044850] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:35: Q000 Double quotes found but single quotes preferred\n'}
+[1.044944] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:63: Q000 Double quotes found but single quotes preferred\n'}
+[1.045036] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:88: Q000 Double quotes found but single quotes preferred\n'}
+[1.045130] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:100: E501 line too long (183 > 99 characters)\n'}
+[1.045225] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:117: Q000 Double quotes found but single quotes preferred\n'}
+[1.045308] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:15:175: Q000 Double quotes found but single quotes preferred\n'}
+[1.045398] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:32: Q000 Double quotes found but single quotes preferred\n'}
+[1.045490] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:60: Q000 Double quotes found but single quotes preferred\n'}
+[1.045564] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:85: Q000 Double quotes found but single quotes preferred\n'}
+[1.045655] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:100: E501 line too long (175 > 99 characters)\n'}
+[1.045732] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:111: Q000 Double quotes found but single quotes preferred\n'}
+[1.045814] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:16:167: Q000 Double quotes found but single quotes preferred\n'}
+[1.045901] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:30: Q000 Double quotes found but single quotes preferred\n'}
+[1.046013] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:58: Q000 Double quotes found but single quotes preferred\n'}
+[1.046099] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:83: Q000 Double quotes found but single quotes preferred\n'}
+[1.046179] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:100: E501 line too long (168 > 99 characters)\n'}
+[1.046258] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:107: Q000 Double quotes found but single quotes preferred\n'}
+[1.046341] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:17:160: Q000 Double quotes found but single quotes preferred\n'}
+[1.046422] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:33: Q000 Double quotes found but single quotes preferred\n'}
+[1.046511] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:61: Q000 Double quotes found but single quotes preferred\n'}
+[1.046602] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:86: Q000 Double quotes found but single quotes preferred\n'}
+[1.046685] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:100: E501 line too long (177 > 99 characters)\n'}
+[1.046766] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:113: Q000 Double quotes found but single quotes preferred\n'}
+[1.046842] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:18:169: Q000 Double quotes found but single quotes preferred\n'}
+[1.046899] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:29: Q000 Double quotes found but single quotes preferred\n'}
+[1.046955] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:51: Q000 Double quotes found but single quotes preferred\n'}
+[1.047010] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:86: Q000 Double quotes found but single quotes preferred\n'}
+[1.047066] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:100: E501 line too long (277 > 99 characters)\n'}
+[1.047122] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:116: Q000 Double quotes found but single quotes preferred\n'}
+[1.047178] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:123: Q000 Double quotes found but single quotes preferred\n'}
+[1.047242] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:128: Q000 Double quotes found but single quotes preferred\n'}
+[1.047301] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:135: Q000 Double quotes found but single quotes preferred\n'}
+[1.047358] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:140: Q000 Double quotes found but single quotes preferred\n'}
+[1.047414] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:147: Q000 Double quotes found but single quotes preferred\n'}
+[1.047470] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:155: Q000 Double quotes found but single quotes preferred\n'}
+[1.047526] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:165: Q000 Double quotes found but single quotes preferred\n'}
+[1.047582] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:170: Q000 Double quotes found but single quotes preferred\n'}
+[1.047638] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:181: Q000 Double quotes found but single quotes preferred\n'}
+[1.047693] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:186: Q000 Double quotes found but single quotes preferred\n'}
+[1.047749] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:195: Q000 Double quotes found but single quotes preferred\n'}
+[1.047810] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:200: Q000 Double quotes found but single quotes preferred\n'}
+[1.047866] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:214: Q000 Double quotes found but single quotes preferred\n'}
+[1.047922] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:227: Q000 Double quotes found but single quotes preferred\n'}
+[1.047979] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:247: Q000 Double quotes found but single quotes preferred\n'}
+[1.048035] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:19:269: Q000 Double quotes found but single quotes preferred\n'}
+[1.048097] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/elderly_home.launch.py:20:100: E501 line too long (115 > 99 characters)\n'}
+[1.048153] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:10:49: Q000 Double quotes found but single quotes preferred\n'}
+[1.048213] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:11:54: Q000 Double quotes found but single quotes preferred\n'}
+[1.048275] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:12:47: Q000 Double quotes found but single quotes preferred\n'}
+[1.048332] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:12:57: Q000 Double quotes found but single quotes preferred\n'}
+[1.048388] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:18:17: Q000 Double quotes found but single quotes preferred\n'}
+[1.048444] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:19:17: Q000 Double quotes found but single quotes preferred\n'}
+[1.048501] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:23:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.048557] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:24:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.048613] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:24:29: Q000 Double quotes found but single quotes preferred\n'}
+[1.048690] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:25:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.048748] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:25:26: Q000 Double quotes found but single quotes preferred\n'}
+[1.048805] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:26:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.048862] (beidou_gazebo) StdoutLine: {'line': b'E     ./launch/slam_mapping.launch.py:26:38: Q000 Double quotes found but single quotes preferred\n'}
+[1.048919] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:16:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.048975] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:16:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.049031] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:16:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.049088] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:17:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.049144] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:17:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.049201] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:17:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.049268] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:18:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.049326] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:18:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.049382] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:18:56: Q000 Double quotes found but single quotes preferred\n'}
+[1.049439] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:18:78: Q000 Double quotes found but single quotes preferred\n'}
+[1.049497] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:18:100: E501 line too long (103 > 99 characters)\n'}
+[1.049560] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:19:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.049622] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:19:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.049679] (beidou_gazebo) StdoutLine: {'line': b'E     ./setup.py:19:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.049737] (beidou_gazebo) StdoutLine: {'line': b'E   assert 1 == 0\n'}
+[1.049794] (beidou_gazebo) StdoutLine: {'line': b'----------------------------- Captured stdout call -----------------------------\n'}
+[1.049859] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.049916] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:9:1: E302 expected 2 blank lines, found 1\n'}
+[1.049974] (beidou_gazebo) StdoutLine: {'line': b'def generate_launch_description():\n'}
+[1.050035] (beidou_gazebo) StdoutLine: {'line': b'^\n'}
+[1.050097] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.050160] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:10:49: Q000 Double quotes found but single quotes preferred\n'}
+[1.050238] (beidou_gazebo) StdoutLine: {'line': b'    package_share = get_package_share_directory("beidou_gazebo")\n'}
+[1.050310] (beidou_gazebo) StdoutLine: {'line': b'                                                ^\n'}
+[1.050372] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.050430] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:11:52: Q000 Double quotes found but single quotes preferred\n'}
+[1.050488] (beidou_gazebo) StdoutLine: {'line': b'    ros_gz_sim_share = get_package_share_directory("ros_gz_sim")\n'}
+[1.050548] (beidou_gazebo) StdoutLine: {'line': b'                                                   ^\n'}
+[1.050607] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.050666] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:12:41: Q000 Double quotes found but single quotes preferred\n'}
+[1.050731] (beidou_gazebo) StdoutLine: {'line': b'    world = os.path.join(package_share, "worlds", "elderly_home.sdf")\n'}
+[1.050793] (beidou_gazebo) StdoutLine: {'line': b'                                        ^\n'}
+[1.050852] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.050912] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:12:51: Q000 Double quotes found but single quotes preferred\n'}
+[1.050973] (beidou_gazebo) StdoutLine: {'line': b'    world = os.path.join(package_share, "worlds", "elderly_home.sdf")\n'}
+[1.051032] (beidou_gazebo) StdoutLine: {'line': b'                                                  ^\n'}
+[1.051091] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.051149] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:13:100: Q000 Double quotes found but single quotes preferred\n'}
+[1.051213] (beidou_gazebo) StdoutLine: {'line': b'    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())\n'}
+[1.051282] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.051342] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.051401] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:13:100: E501 line too long (183 > 99 characters)\n'}
+[1.051460] (beidou_gazebo) StdoutLine: {'line': b'    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())\n'}
+[1.051521] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.051579] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.051637] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:13:110: Q000 Double quotes found but single quotes preferred\n'}
+[1.051695] (beidou_gazebo) StdoutLine: {'line': b'    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())\n'}
+[1.051754] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                             ^\n'}
+[1.051814] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.051872] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:13:150: Q000 Double quotes found but single quotes preferred\n'}
+[1.051931] (beidou_gazebo) StdoutLine: {'line': b'    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())\n'}
+[1.051995] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                     ^\n'}
+[1.052060] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.052119] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:13:161: Q000 Double quotes found but single quotes preferred\n'}
+[1.052183] (beidou_gazebo) StdoutLine: {'line': b'    gazebo = IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(ros_gz_sim_share, "launch", "gz_sim.launch.py")), launch_arguments={"gz_args": f"-r {world}"}.items())\n'}
+[1.052262] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                ^\n'}
+[1.052336] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.052407] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:32: Q000 Double quotes found but single quotes preferred\n'}
+[1.052477] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.052548] (beidou_gazebo) StdoutLine: {'line': b'                               ^\n'}
+[1.052621] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.052690] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:60: Q000 Double quotes found but single quotes preferred\n'}
+[1.052759] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.052822] (beidou_gazebo) StdoutLine: {'line': b'                                                           ^\n'}
+[1.052882] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.052945] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:85: Q000 Double quotes found but single quotes preferred\n'}
+[1.053014] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.053082] (beidou_gazebo) StdoutLine: {'line': b'                                                                                    ^\n'}
+[1.053149] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.053221] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:100: E501 line too long (180 > 99 characters)\n'}
+[1.053297] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.053367] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.053444] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.053509] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:111: Q000 Double quotes found but single quotes preferred\n'}
+[1.053569] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.053629] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                              ^\n'}
+[1.053688] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.053750] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:14:172: Q000 Double quotes found but single quotes preferred\n'}
+[1.053819] (beidou_gazebo) StdoutLine: {'line': b'    scan_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="scan_bridge", arguments=["/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan"], output="screen")\n'}
+[1.053876] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                           ^\n'}
+[1.053934] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.053991] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:35: Q000 Double quotes found but single quotes preferred\n'}
+[1.054047] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.054106] (beidou_gazebo) StdoutLine: {'line': b'                                  ^\n'}
+[1.054163] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.054229] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:63: Q000 Double quotes found but single quotes preferred\n'}
+[1.054290] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.054349] (beidou_gazebo) StdoutLine: {'line': b'                                                              ^\n'}
+[1.054406] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.054464] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:88: Q000 Double quotes found but single quotes preferred\n'}
+[1.054523] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.054581] (beidou_gazebo) StdoutLine: {'line': b'                                                                                       ^\n'}
+[1.054641] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.054707] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:100: E501 line too long (183 > 99 characters)\n'}
+[1.054772] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.054842] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.054908] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.054974] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:117: Q000 Double quotes found but single quotes preferred\n'}
+[1.055054] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.055121] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                    ^\n'}
+[1.055194] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.055283] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:15:175: Q000 Double quotes found but single quotes preferred\n'}
+[1.055360] (beidou_gazebo) StdoutLine: {'line': b'    cmd_vel_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="cmd_vel_bridge", arguments=["/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist"], output="screen")\n'}
+[1.055441] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                              ^\n'}
+[1.055518] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.055594] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:32: Q000 Double quotes found but single quotes preferred\n'}
+[1.055676] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.055744] (beidou_gazebo) StdoutLine: {'line': b'                               ^\n'}
+[1.055808] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.055873] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:60: Q000 Double quotes found but single quotes preferred\n'}
+[1.055938] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.056004] (beidou_gazebo) StdoutLine: {'line': b'                                                           ^\n'}
+[1.056067] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.056129] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:85: Q000 Double quotes found but single quotes preferred\n'}
+[1.056197] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.056274] (beidou_gazebo) StdoutLine: {'line': b'                                                                                    ^\n'}
+[1.056341] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.056405] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:100: E501 line too long (175 > 99 characters)\n'}
+[1.056469] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.056533] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.056598] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.056662] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:111: Q000 Double quotes found but single quotes preferred\n'}
+[1.056724] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.056788] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                              ^\n'}
+[1.056850] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.056912] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:16:167: Q000 Double quotes found but single quotes preferred\n'}
+[1.056974] (beidou_gazebo) StdoutLine: {'line': b'    odom_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="odom_bridge", arguments=["/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry"], output="screen")\n'}
+[1.057036] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                      ^\n'}
+[1.057100] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.057162] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:30: Q000 Double quotes found but single quotes preferred\n'}
+[1.057233] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.057301] (beidou_gazebo) StdoutLine: {'line': b'                             ^\n'}
+[1.057365] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.057430] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:58: Q000 Double quotes found but single quotes preferred\n'}
+[1.057496] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.057566] (beidou_gazebo) StdoutLine: {'line': b'                                                         ^\n'}
+[1.057627] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.057687] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:83: Q000 Double quotes found but single quotes preferred\n'}
+[1.057750] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.057814] (beidou_gazebo) StdoutLine: {'line': b'                                                                                  ^\n'}
+[1.057876] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.057938] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:100: E501 line too long (168 > 99 characters)\n'}
+[1.058000] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.058072] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.058136] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.058197] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:107: Q000 Double quotes found but single quotes preferred\n'}
+[1.058270] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.058334] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                          ^\n'}
+[1.058397] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.058461] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:17:160: Q000 Double quotes found but single quotes preferred\n'}
+[1.058527] (beidou_gazebo) StdoutLine: {'line': b'    tf_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="tf_bridge", arguments=["/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V"], output="screen")\n'}
+[1.058591] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                               ^\n'}
+[1.058656] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.058720] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:33: Q000 Double quotes found but single quotes preferred\n'}
+[1.058784] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.058852] (beidou_gazebo) StdoutLine: {'line': b'                                ^\n'}
+[1.058916] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.058978] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:61: Q000 Double quotes found but single quotes preferred\n'}
+[1.059042] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.059105] (beidou_gazebo) StdoutLine: {'line': b'                                                            ^\n'}
+[1.059167] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.059242] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:86: Q000 Double quotes found but single quotes preferred\n'}
+[1.059308] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.059379] (beidou_gazebo) StdoutLine: {'line': b'                                                                                     ^\n'}
+[1.059443] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.059505] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:100: E501 line too long (177 > 99 characters)\n'}
+[1.059568] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.059629] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.059692] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.059754] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:113: Q000 Double quotes found but single quotes preferred\n'}
+[1.059817] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.059879] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                ^\n'}
+[1.059943] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.060005] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:18:169: Q000 Double quotes found but single quotes preferred\n'}
+[1.060067] (beidou_gazebo) StdoutLine: {'line': b'    clock_bridge = Node(package="ros_gz_bridge", executable="parameter_bridge", name="clock_bridge", arguments=["/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"], output="screen")\n'}
+[1.060130] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                        ^\n'}
+[1.060193] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.060266] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:29: Q000 Double quotes found but single quotes preferred\n'}
+[1.060331] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.060406] (beidou_gazebo) StdoutLine: {'line': b'                            ^\n'}
+[1.060469] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.060532] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:51: Q000 Double quotes found but single quotes preferred\n'}
+[1.060596] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.060660] (beidou_gazebo) StdoutLine: {'line': b'                                                  ^\n'}
+[1.060721] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.060783] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:86: Q000 Double quotes found but single quotes preferred\n'}
+[1.060845] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.060917] (beidou_gazebo) StdoutLine: {'line': b'                                                                                     ^\n'}
+[1.060979] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.061041] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:100: E501 line too long (277 > 99 characters)\n'}
+[1.061106] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.061169] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.061243] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.061309] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:116: Q000 Double quotes found but single quotes preferred\n'}
+[1.061370] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.061433] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                   ^\n'}
+[1.061494] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.061555] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:123: Q000 Double quotes found but single quotes preferred\n'}
+[1.061615] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.061678] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                          ^\n'}
+[1.061739] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.061800] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:128: Q000 Double quotes found but single quotes preferred\n'}
+[1.061861] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.061923] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                               ^\n'}
+[1.061985] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.062046] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:135: Q000 Double quotes found but single quotes preferred\n'}
+[1.062108] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.062172] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                      ^\n'}
+[1.062448] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.062566] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:140: Q000 Double quotes found but single quotes preferred\n'}
+[1.062646] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.062725] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                           ^\n'}
+[1.062810] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.062883] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:147: Q000 Double quotes found but single quotes preferred\n'}
+[1.062953] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.063026] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                  ^\n'}
+[1.063097] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.063165] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:155: Q000 Double quotes found but single quotes preferred\n'}
+[1.063265] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.063348] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                          ^\n'}
+[1.063421] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.063496] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:165: Q000 Double quotes found but single quotes preferred\n'}
+[1.063574] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.063660] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                    ^\n'}
+[1.063740] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.063799] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:170: Q000 Double quotes found but single quotes preferred\n'}
+[1.063860] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.063922] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                         ^\n'}
+[1.063982] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.064042] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:181: Q000 Double quotes found but single quotes preferred\n'}
+[1.064100] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.064162] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                    ^\n'}
+[1.064232] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.064299] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:186: Q000 Double quotes found but single quotes preferred\n'}
+[1.064360] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.064427] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                         ^\n'}
+[1.064492] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.064556] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:195: Q000 Double quotes found but single quotes preferred\n'}
+[1.064617] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.064678] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                  ^\n'}
+[1.064740] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.064801] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:200: Q000 Double quotes found but single quotes preferred\n'}
+[1.064864] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.064924] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                       ^\n'}
+[1.064982] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.065039] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:214: Q000 Double quotes found but single quotes preferred\n'}
+[1.065096] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.065157] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                                     ^\n'}
+[1.065239] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.065301] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:227: Q000 Double quotes found but single quotes preferred\n'}
+[1.065359] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.065421] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                                                  ^\n'}
+[1.065481] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.065538] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:247: Q000 Double quotes found but single quotes preferred\n'}
+[1.065596] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.065657] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                                                                      ^\n'}
+[1.065715] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.065747] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:19:269: Q000 Double quotes found but single quotes preferred\n'}
+[1.065780] (beidou_gazebo) StdoutLine: {'line': b'    lidar_tf = Node(package="tf2_ros", executable="static_transform_publisher", name="lidar_static_tf", arguments=["--x", "0", "--y", "0", "--z", "0.65", "--roll", "0", "--pitch", "0", "--yaw", "0", "--frame-id", "base_link", "--child-frame-id", "lidar_link"], output="screen")\n'}
+[1.065813] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                                                                                                                                                                                            ^\n'}
+[1.065848] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.065880] (beidou_gazebo) StdoutLine: {'line': b'./launch/elderly_home.launch.py:20:100: E501 line too long (115 > 99 characters)\n'}
+[1.065912] (beidou_gazebo) StdoutLine: {'line': b'    return LaunchDescription([gazebo, scan_bridge, cmd_vel_bridge, odom_bridge, tf_bridge, clock_bridge, lidar_tf])\n'}
+[1.065945] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.065978] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066010] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:10:49: Q000 Double quotes found but single quotes preferred\n'}
+[1.066042] (beidou_gazebo) StdoutLine: {'line': b'    package_share = get_package_share_directory("beidou_gazebo")\n'}
+[1.066073] (beidou_gazebo) StdoutLine: {'line': b'                                                ^\n'}
+[1.066106] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066138] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:11:54: Q000 Double quotes found but single quotes preferred\n'}
+[1.066170] (beidou_gazebo) StdoutLine: {'line': b'    slam_toolbox_share = get_package_share_directory("slam_toolbox")\n'}
+[1.066201] (beidou_gazebo) StdoutLine: {'line': b'                                                     ^\n'}
+[1.066239] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066272] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:12:47: Q000 Double quotes found but single quotes preferred\n'}
+[1.066304] (beidou_gazebo) StdoutLine: {'line': b'    slam_params = os.path.join(package_share, "config", "slam_params.yaml")\n'}
+[1.066336] (beidou_gazebo) StdoutLine: {'line': b'                                              ^\n'}
+[1.066368] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066398] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:12:57: Q000 Double quotes found but single quotes preferred\n'}
+[1.066429] (beidou_gazebo) StdoutLine: {'line': b'    slam_params = os.path.join(package_share, "config", "slam_params.yaml")\n'}
+[1.066461] (beidou_gazebo) StdoutLine: {'line': b'                                                        ^\n'}
+[1.066493] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066524] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:18:17: Q000 Double quotes found but single quotes preferred\n'}
+[1.066554] (beidou_gazebo) StdoutLine: {'line': b'                "launch",\n'}
+[1.066586] (beidou_gazebo) StdoutLine: {'line': b'                ^\n'}
+[1.066621] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066654] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:19:17: Q000 Double quotes found but single quotes preferred\n'}
+[1.066690] (beidou_gazebo) StdoutLine: {'line': b'                "online_async_launch.py",\n'}
+[1.066724] (beidou_gazebo) StdoutLine: {'line': b'                ^\n'}
+[1.066757] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066790] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:23:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.066825] (beidou_gazebo) StdoutLine: {'line': b'            "slam_params_file": slam_params,\n'}
+[1.066858] (beidou_gazebo) StdoutLine: {'line': b'            ^\n'}
+[1.066891] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.066923] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:24:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.066956] (beidou_gazebo) StdoutLine: {'line': b'            "use_sim_time": "true",\n'}
+[1.066989] (beidou_gazebo) StdoutLine: {'line': b'            ^\n'}
+[1.067021] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067053] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:24:29: Q000 Double quotes found but single quotes preferred\n'}
+[1.067085] (beidou_gazebo) StdoutLine: {'line': b'            "use_sim_time": "true",\n'}
+[1.067117] (beidou_gazebo) StdoutLine: {'line': b'                            ^\n'}
+[1.067152] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067185] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:25:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.067224] (beidou_gazebo) StdoutLine: {'line': b'            "autostart": "true",\n'}
+[1.067259] (beidou_gazebo) StdoutLine: {'line': b'            ^\n'}
+[1.067292] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067324] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:25:26: Q000 Double quotes found but single quotes preferred\n'}
+[1.067356] (beidou_gazebo) StdoutLine: {'line': b'            "autostart": "true",\n'}
+[1.067392] (beidou_gazebo) StdoutLine: {'line': b'                         ^\n'}
+[1.067423] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067457] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:26:13: Q000 Double quotes found but single quotes preferred\n'}
+[1.067490] (beidou_gazebo) StdoutLine: {'line': b'            "use_lifecycle_manager": "false",\n'}
+[1.067522] (beidou_gazebo) StdoutLine: {'line': b'            ^\n'}
+[1.067555] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067588] (beidou_gazebo) StdoutLine: {'line': b'./launch/slam_mapping.launch.py:26:38: Q000 Double quotes found but single quotes preferred\n'}
+[1.067620] (beidou_gazebo) StdoutLine: {'line': b'            "use_lifecycle_manager": "false",\n'}
+[1.067653] (beidou_gazebo) StdoutLine: {'line': b'                                     ^\n'}
+[1.067684] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067716] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:16:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.067749] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),\n'}
+[1.067780] (beidou_gazebo) StdoutLine: {'line': b'                      ^\n'}
+[1.067812] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067843] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:16:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.067875] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),\n'}
+[1.067905] (beidou_gazebo) StdoutLine: {'line': b'                                             ^\n'}
+[1.067937] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.067968] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:16:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.068000] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),\n'}
+[1.068031] (beidou_gazebo) StdoutLine: {'line': b'                                                             ^\n'}
+[1.068062] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068094] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:17:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.068128] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),\n'}
+[1.068160] (beidou_gazebo) StdoutLine: {'line': b'                      ^\n'}
+[1.068192] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068229] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:17:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.068261] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),\n'}
+[1.068294] (beidou_gazebo) StdoutLine: {'line': b'                                             ^\n'}
+[1.068326] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068357] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:17:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.068390] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "worlds"), glob("worlds/*.sdf")),\n'}
+[1.068421] (beidou_gazebo) StdoutLine: {'line': b'                                                             ^\n'}
+[1.068453] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068485] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:18:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.068516] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),\n'}
+[1.068547] (beidou_gazebo) StdoutLine: {'line': b'                      ^\n'}
+[1.068579] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068610] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:18:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.068641] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),\n'}
+[1.068673] (beidou_gazebo) StdoutLine: {'line': b'                                             ^\n'}
+[1.068702] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068732] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:18:56: Q000 Double quotes found but single quotes preferred\n'}
+[1.068762] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),\n'}
+[1.068794] (beidou_gazebo) StdoutLine: {'line': b'                                                       ^\n'}
+[1.068825] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068856] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:18:78: Q000 Double quotes found but single quotes preferred\n'}
+[1.068887] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),\n'}
+[1.068918] (beidou_gazebo) StdoutLine: {'line': b'                                                                             ^\n'}
+[1.068950] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.068980] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:18:100: E501 line too long (103 > 99 characters)\n'}
+[1.069011] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "models", "simple_robot"), glob("models/simple_robot/*")),\n'}
+[1.069042] (beidou_gazebo) StdoutLine: {'line': b'                                                                                                   ^\n'}
+[1.069073] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069103] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:19:23: Q000 Double quotes found but single quotes preferred\n'}
+[1.069134] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),\n'}
+[1.069166] (beidou_gazebo) StdoutLine: {'line': b'                      ^\n'}
+[1.069196] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069233] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:19:46: Q000 Double quotes found but single quotes preferred\n'}
+[1.069265] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),\n'}
+[1.069299] (beidou_gazebo) StdoutLine: {'line': b'                                             ^\n'}
+[1.069330] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069361] (beidou_gazebo) StdoutLine: {'line': b'./setup.py:19:62: Q000 Double quotes found but single quotes preferred\n'}
+[1.069392] (beidou_gazebo) StdoutLine: {'line': b'        (os.path.join("share", package_name, "config"), glob("config/*.yaml")),\n'}
+[1.069424] (beidou_gazebo) StdoutLine: {'line': b'                                                             ^\n'}
+[1.069455] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069484] (beidou_gazebo) StdoutLine: {'line': b'1     E302 expected 2 blank lines, found 1\n'}
+[1.069515] (beidou_gazebo) StdoutLine: {'line': b'9     E501 line too long (183 > 99 characters)\n'}
+[1.069546] (beidou_gazebo) StdoutLine: {'line': b'79    Q000 Double quotes found but single quotes preferred\n'}
+[1.069577] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069608] (beidou_gazebo) StdoutLine: {'line': b'20 files checked\n'}
+[1.069639] (beidou_gazebo) StdoutLine: {'line': b'89 errors\n'}
+[1.069671] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069702] (beidou_gazebo) StdoutLine: {'line': b"'E'-type errors: 10\n"}
+[1.069733] (beidou_gazebo) StdoutLine: {'line': b"'Q'-type errors: 79\n"}
+[1.069766] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069796] (beidou_gazebo) StdoutLine: {'line': b'Checked files:\n'}
+[1.069828] (beidou_gazebo) StdoutLine: {'line': b'\n'}
+[1.069859] (beidou_gazebo) StdoutLine: {'line': b'* ./setup.py\n'}
+[1.069890] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_pep257.py\n'}
+[1.069921] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_beidou_transform.py\n'}
+[1.069951] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_flake8.py\n'}
+[1.069983] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_geofence.py\n'}
+[1.070014] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_guard_navigation.py\n'}
+[1.070044] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_copyright.py\n'}
+[1.070075] (beidou_gazebo) StdoutLine: {'line': b'* ./test/test_voice_alarm.py\n'}
+[1.070107] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/guard_navigation.launch.py\n'}
+[1.070139] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/geofence.launch.py\n'}
+[1.070169] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/voice_alarm.launch.py\n'}
+[1.070199] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/slam_mapping.launch.py\n'}
+[1.070235] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/elderly_beidou.launch.py\n'}
+[1.070266] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/nav2_navigation.launch.py\n'}
+[1.070298] (beidou_gazebo) StdoutLine: {'line': b'* ./launch/elderly_home.launch.py\n'}
+[1.070329] (beidou_gazebo) StdoutLine: {'line': b'* ./beidou_gazebo/elderly_voice_alarm.py\n'}
+[1.070359] (beidou_gazebo) StdoutLine: {'line': b'* ./beidou_gazebo/elderly_guard_navigation.py\n'}
+[1.070393] (beidou_gazebo) StdoutLine: {'line': b'* ./beidou_gazebo/elderly_geofence.py\n'}
+[1.070424] (beidou_gazebo) StdoutLine: {'line': b'* ./beidou_gazebo/beidou_position_publisher.py\n'}
+[1.070456] (beidou_gazebo) StderrLine: {'line': b'=============================== warnings summary ===============================\n'}
+[1.070512] (beidou_gazebo) StderrLine: {'line': b'test/test_flake8.py: 18 warnings\n'}
+[1.070547] (beidou_gazebo) StderrLine: {'line': b'  Warning: This process (pid=29115) is multi-threaded, use of fork() may lead to deadlocks in the child.\n'}
+[1.070582] (beidou_gazebo) StderrLine: {'line': b'\n'}
+[1.070615] (beidou_gazebo) StderrLine: {'line': b'-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n'}
+[1.070648] (beidou_gazebo) StdoutLine: {'line': b'* ./beidou_gazebo/__init__.py\n'}
+[1.070683] (beidou_gazebo) StdoutLine: {'line': b'- generated xml file: /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/pytest.xml -\n'}
+[1.070716] (beidou_gazebo) StdoutLine: {'line': b'=========================== short test summary info ============================\n'}
+[1.070747] (beidou_gazebo) StdoutLine: {'line': b'FAILED test/test_flake8.py::test_flake8 - AssertionError: Found 89 code style...\n'}
+[1.070781] (beidou_gazebo) StdoutLine: {'line': b'============= 1 failed, 30 passed, 1 skipped, 18 warnings in 0.68s =============\n'}
+[1.101647] (-) TimerEvent: {}
+[1.149437] (beidou_gazebo) CommandEnded: {'returncode': 1}
+[1.150324] (beidou_gazebo) TestFailure: {'identifier': 'beidou_gazebo'}
+[1.150361] (beidou_gazebo) JobEnded: {'identifier': 'beidou_gazebo', 'rc': 0}
+[1.150836] (-) EventReactorShutdown: {}

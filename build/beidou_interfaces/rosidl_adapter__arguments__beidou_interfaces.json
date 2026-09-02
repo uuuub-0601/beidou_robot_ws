@@ -1,0 +1,6 @@
+{
+  "package_name": "beidou_interfaces",
+  "non_idl_tuples": [
+    "/home/ubbbb/beidou_robot_ws/src/beidou_interfaces:msg/ElderlyMotion.msg"
+  ]
+}

@@ -1,0 +1,13 @@
+[console_scripts]
+beidou_position_publisher = beidou_gazebo.beidou_position_publisher:main
+elderly_companion_navigation = beidou_gazebo.elderly_companion_navigation:main
+elderly_companion_v2 = beidou_gazebo.elderly_companion_v2:main
+elderly_geofence = beidou_gazebo.elderly_geofence:main
+elderly_guard_navigation = beidou_gazebo.elderly_guard_navigation:main
+elderly_motion_estimator = beidou_gazebo.elderly_motion_estimator:main
+elderly_navigation_handoff = beidou_gazebo.elderly_navigation_handoff:main
+elderly_rviz_status = beidou_gazebo.elderly_rviz_status:main
+elderly_voice_alarm = beidou_gazebo.elderly_voice_alarm:main
+elderly_voice_alert = beidou_gazebo.elderly_voice_alert:main
+elderly_walker = beidou_gazebo.elderly_walker:main
+piper_chinese_tts = beidou_gazebo.piper_chinese_tts:main

@@ -1,0 +1,19 @@
+[100%] Built target elderly_pose_bridge
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib/beidou_gazebo_pose_bridge/elderly_pose_bridge
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/ament_index/resource_index/package_run_dependencies/beidou_gazebo_pose_bridge
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/ament_index/resource_index/parent_prefix_path/beidou_gazebo_pose_bridge
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/environment/path.sh
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/environment/path.dsv
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/local_setup.bash
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/local_setup.sh
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/local_setup.zsh
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/local_setup.dsv
+-- Symlinking: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.dsv
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/ament_index/resource_index/packages/beidou_gazebo_pose_bridge
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/cmake/beidou_gazebo_pose_bridgeConfig.cmake
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/cmake/beidou_gazebo_pose_bridgeConfig-version.cmake
+-- Up-to-date symlink: /home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.xml

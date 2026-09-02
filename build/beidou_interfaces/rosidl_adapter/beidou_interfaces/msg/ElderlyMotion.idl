@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from beidou_interfaces/msg/ElderlyMotion.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module beidou_interfaces {
+  module msg {
+    struct ElderlyMotion {
+      std_msgs::msg::Header header;
+
+      double vx;
+
+      double vy;
+
+      double speed;
+
+      double heading;
+
+      boolean valid;
+    };
+  };
+};

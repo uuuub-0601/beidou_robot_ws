@@ -1,0 +1,8 @@
+setup.py
+beidou_interfaces/__init__.py
+beidou_interfaces.egg-info/PKG-INFO
+beidou_interfaces.egg-info/SOURCES.txt
+beidou_interfaces.egg-info/dependency_links.txt
+beidou_interfaces.egg-info/top_level.txt
+beidou_interfaces/msg/__init__.py
+beidou_interfaces/msg/_elderly_motion.py

@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_typesupport_fastrtps_c/beidou_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h

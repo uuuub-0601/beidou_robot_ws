@@ -1,0 +1,226 @@
+[0.065s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-up-to', 'beidou_gazebo']
+[0.065s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=18, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=['beidou_gazebo'], packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x761525b7a1b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x761525cab050>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x761525cab050>>)
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.088s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.088s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ubbbb/beidou_robot_ws'
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.088s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.104s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ignore_ament_install'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['colcon_pkg']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'colcon_pkg'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['colcon_meta']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'colcon_meta'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['ros']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ros'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['cmake', 'python']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'cmake'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'python'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['python_setup_py']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'python_setup_py'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'ignore'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'ignore_ament_install'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['colcon_pkg']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'colcon_pkg'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['colcon_meta']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'colcon_meta'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['ros']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'ros'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['cmake', 'python']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'cmake'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'python'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extensions ['python_setup_py']
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(maps_backup) by extension 'python_setup_py'
+[0.105s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extension 'ignore'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extension 'ignore_ament_install'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extensions ['colcon_pkg']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extension 'colcon_pkg'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extensions ['colcon_meta']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extension 'colcon_meta'
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extensions ['ros']
+[0.106s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo) by extension 'ros'
+[0.108s] DEBUG:colcon.colcon_core.package_identification:Package 'src/beidou_gazebo' with type 'ros.ament_python' and name 'beidou_gazebo'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(src/beidou_gazebo_pose_bridge) by extension 'ros'
+[0.109s] DEBUG:colcon.colcon_core.package_identification:Package 'src/beidou_gazebo_pose_bridge' with type 'ros.ament_cmake' and name 'beidou_gazebo_pose_bridge'
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.121s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.121s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.122s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 409 installed packages in /opt/ros/jazzy
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_args' from command line to 'None'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_target' from command line to 'None'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.153s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo_pose_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.153s] DEBUG:colcon.colcon_core.verb:Building package 'beidou_gazebo_pose_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge', 'merge_install': False, 'path': '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge', 'symlink_install': True, 'test_result_base': None}
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.154s] Level 5:colcon.colcon_core.verb:set package 'beidou_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.154s] DEBUG:colcon.colcon_core.verb:Building package 'beidou_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo', 'merge_install': False, 'path': '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo', 'symlink_install': True, 'test_result_base': None}
+[0.154s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.155s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.155s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge' with build type 'ament_cmake'
+[0.155s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge'
+[0.156s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.156s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.156s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.163s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge
+[1.543s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge
+[1.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge -- -j18 -l18
+[5.587s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge -- -j18 -l18
+[5.595s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge
+[5.732s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(beidou_gazebo_pose_bridge)
+[5.733s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge
+[5.734s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge' for CMake module files
+[5.735s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge' for CMake config files
+[5.735s] Level 1:colcon.colcon_core.shell:create_environment_hook('beidou_gazebo_pose_bridge', 'cmake_prefix_path')
+[5.735s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.ps1'
+[5.735s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.dsv'
+[5.736s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.sh'
+[5.736s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib'
+[5.736s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/bin'
+[5.736s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib/pkgconfig/beidou_gazebo_pose_bridge.pc'
+[5.737s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib/python3.12/site-packages'
+[5.737s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/bin'
+[5.737s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.ps1'
+[5.737s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.dsv'
+[5.738s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.sh'
+[5.738s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.bash'
+[5.738s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.zsh'
+[5.738s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/colcon-core/packages/beidou_gazebo_pose_bridge)
+[5.739s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(beidou_gazebo_pose_bridge)
+[5.739s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge' for CMake module files
+[5.739s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge' for CMake config files
+[5.739s] Level 1:colcon.colcon_core.shell:create_environment_hook('beidou_gazebo_pose_bridge', 'cmake_prefix_path')
+[5.739s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.ps1'
+[5.740s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.dsv'
+[5.740s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/hook/cmake_prefix_path.sh'
+[5.740s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib'
+[5.740s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/bin'
+[5.740s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib/pkgconfig/beidou_gazebo_pose_bridge.pc'
+[5.740s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/lib/python3.12/site-packages'
+[5.740s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/bin'
+[5.741s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.ps1'
+[5.741s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.dsv'
+[5.741s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.sh'
+[5.741s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.bash'
+[5.742s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/beidou_gazebo_pose_bridge/package.zsh'
+[5.742s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge/share/colcon-core/packages/beidou_gazebo_pose_bridge)
+[5.742s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo' with build type 'ament_python'
+[5.742s] Level 1:colcon.colcon_core.shell:create_environment_hook('beidou_gazebo', 'ament_prefix_path')
+[5.742s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/ament_prefix_path.ps1'
+[5.743s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/ament_prefix_path.dsv'
+[5.743s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/ament_prefix_path.sh'
+[5.744s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.744s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.882s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ubbbb/beidou_robot_ws/src/beidou_gazebo'
+[5.882s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.882s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.219s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: alias, test, build_ext, install, update_catalog, build_scripts, egg_info, check, bdist_rpm, register, saveopts, easy_install, sdist, build_py, dist_info, init_catalog, upload_docs, install_headers, extract_messages, bdist, bdist_egg, clean, compile_catalog, symlink_data, build, install_lib, rotate, develop, install_egg_info, build_clib, bdist_dumb, editable_wheel, upload, install_data, install_scripts, setopt
+[6.428s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools 'develop' options: --prefix, --always-copy, --force-installation-into-system-dir, --quiet, --always-unzip, --script-dir, --user, --egg-path, --version, --zip-ok, --optimize, --site-dirs, --upgrade, --build-directory, --allow-hosts, --uninstall, --no-find-links, --multi-version, --dry-run, --record, --no-user-cfg, --index-url, --install-layout, --help, --local-snapshots-ok, --no-deps, --install-dir, --find-links, --editable, --verbose, --exclude-scripts
+[6.431s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo': AMENT_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/build --no-deps symlink_data
+[6.826s] Level 1:colcon.colcon_core.shell:create_environment_hook('beidou_gazebo', 'pythonpath_develop')
+[6.827s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.ps1'
+[6.828s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo' returned '0': AMENT_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubbbb/beidou_robot_ws/install/beidou_gazebo_pose_bridge:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ubbbb/beidou_robot_ws/build/beidou_gazebo/build --no-deps symlink_data
+[6.829s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.dsv'
+[6.830s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.sh'
+[6.831s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo' for CMake module files
+[6.832s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo' for CMake config files
+[6.833s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib'
+[6.833s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/bin'
+[6.833s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/pkgconfig/beidou_gazebo.pc'
+[6.833s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/lib/python3.12/site-packages'
+[6.834s] Level 1:colcon.colcon_core.shell:create_environment_hook('beidou_gazebo', 'pythonpath')
+[6.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/pythonpath.ps1'
+[6.835s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/pythonpath.dsv'
+[6.836s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/hook/pythonpath.sh'
+[6.837s] Level 1:colcon.colcon_core.environment:checking '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/bin'
+[6.837s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(beidou_gazebo)
+[6.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/package.ps1'
+[6.838s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/package.dsv'
+[6.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/package.sh'
+[6.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/package.bash'
+[6.840s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/beidou_gazebo/package.zsh'
+[6.840s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubbbb/beidou_robot_ws/install/beidou_gazebo/share/colcon-core/packages/beidou_gazebo)
+[6.840s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.840s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.840s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.840s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.849s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.849s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.849s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.860s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.861s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubbbb/beidou_robot_ws/install/local_setup.ps1'
+[6.861s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubbbb/beidou_robot_ws/install/_local_setup_util_ps1.py'
+[6.862s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubbbb/beidou_robot_ws/install/setup.ps1'
+[6.863s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubbbb/beidou_robot_ws/install/local_setup.sh'
+[6.863s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubbbb/beidou_robot_ws/install/_local_setup_util_sh.py'
+[6.863s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubbbb/beidou_robot_ws/install/setup.sh'
+[6.864s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubbbb/beidou_robot_ws/install/local_setup.bash'
+[6.864s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubbbb/beidou_robot_ws/install/setup.bash'
+[6.864s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubbbb/beidou_robot_ws/install/local_setup.zsh'
+[6.865s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubbbb/beidou_robot_ws/install/setup.zsh'

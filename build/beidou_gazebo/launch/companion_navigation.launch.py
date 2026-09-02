@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/src/beidou_gazebo/launch/companion_navigation.launch.py

@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-8002a1b692381bc808be.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "beidou_interfaces__py",
+					"jsonFile" : "directory-beidou_interfaces__py-69f77a079a7998da79db.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/beidou_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "beidou_interfaces__rs",
+					"jsonFile" : "directory-beidou_interfaces__rs-ce53d88b14e5d6c01dcc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/beidou_interfaces__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "beidou_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_beidou_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_beidou_interfaces_egg-f094160769a408a14c09.json",
+					"name" : "ament_cmake_python_build_beidou_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_beidou_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_beidou_interfaces-3f7c223c7ecd534413fa.json",
+					"name" : "ament_cmake_python_symlink_beidou_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces-788eb24ad03b41624dd4.json",
+					"name" : "beidou_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__cpp-e451c85f2715c480915d.json",
+					"name" : "beidou_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "beidou_interfaces__py::@78872ca0735c96105786",
+					"jsonFile" : "target-beidou_interfaces__py-95c1566f2e0f9e503cb3.json",
+					"name" : "beidou_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_generator_c-e6c73fb070915155cd27.json",
+					"name" : "beidou_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_generator_py-83f157710ee297c7794d.json",
+					"name" : "beidou_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_generator_type_description-6e20f299f25c5bb7d5d8.json",
+					"name" : "beidou_interfaces__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_c-9d3035afd10f1e927ba7.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_cpp-a3ec13e3ea57b6f293af.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_fastrtps_c-accb3c2d26e308542cba.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_fastrtps_cpp-9e5e01f013a12f8371b5.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_introspection_c-c915e1739e54cda4d3e3.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces__rosidl_typesupport_introspection_cpp-604812d3a33fbe9be078.json",
+					"name" : "beidou_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "beidou_interfaces__rs::@457cd8682233ae0f9297",
+					"jsonFile" : "target-beidou_interfaces__rs-62966fea32239f6efd04.json",
+					"name" : "beidou_interfaces__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces_s__rosidl_typesupport_c-ad2c3c17559695351f82.json",
+					"name" : "beidou_interfaces_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces_s__rosidl_typesupport_fastrtps_c-fca198c9e50dd7e379a5.json",
+					"name" : "beidou_interfaces_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces_s__rosidl_typesupport_introspection_c-81e9f8084dac045ab319.json",
+					"name" : "beidou_interfaces_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_interfaces_uninstall-b83b5d15401b5badf8ee.json",
+					"name" : "beidou_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-410f90ab7abc09f8cbf1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces",
+		"source" : "/home/ubbbb/beidou_robot_ws/src/beidou_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

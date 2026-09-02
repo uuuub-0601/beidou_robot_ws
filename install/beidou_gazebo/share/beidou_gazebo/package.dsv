@@ -1,0 +1,9 @@
+source;share/beidou_gazebo/hook/pythonpath.ps1
+source;share/beidou_gazebo/hook/pythonpath.dsv
+source;share/beidou_gazebo/hook/pythonpath.sh
+source;share/beidou_gazebo/hook/ament_prefix_path.ps1
+source;share/beidou_gazebo/hook/ament_prefix_path.dsv
+source;share/beidou_gazebo/hook/ament_prefix_path.sh
+source;../../build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.ps1
+source;../../build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.dsv
+source;../../build/beidou_gazebo/share/beidou_gazebo/hook/pythonpath_develop.sh

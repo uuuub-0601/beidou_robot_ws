@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/ament_cmake_core/beidou_interfacesConfig.cmake

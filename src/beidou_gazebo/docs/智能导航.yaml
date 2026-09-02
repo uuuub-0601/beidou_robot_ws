@@ -1,0 +1,71 @@
+# 智能导航
+（终端九可以往前放更好一点）
+终端一：启动Gazebo
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo elderly_final.launch.py
+
+终端二：启动 Nav2
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo nav2_final_navigation.launch.py
+
+终端三：启动老人移动
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo elderly_walker.launch.py
+
+终端四：启动模拟北斗
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo elderly_beidou.launch.py
+
+终端五：启动电子围栏
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo geofence.launch.py
+
+终端六：启动RViz
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+rviz2
+
+终端七：启动 SAFE/WARNING/DANGER 文字
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo elderly_rviz_status.launch.py
+
+终端八：启动语音警备
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo voice_alert.launch.py
+
+终端九：启动老人跟随
+source /opt/ros/jazzy/setup.bash
+source ~/beidou_robot_ws/install/setup.bash
+
+ros2 launch beidou_gazebo companion_v2.launch.py
+
+rviz里面的配置：
+
+1.RViz Fixed Frame设置：
+Fixed Frame = map
+
+2.Add→ Map（Topic：/map）
+
+3.Add→ RobotModel
+
+4.Add→ MarkerArray（Topic：/elderly_geofence_markers）
+
+5.Add→ Pose（Topic：/elderly_position）
+
+6.Add→ Marker(Topic:/elderly_geofence_status_marker)
+

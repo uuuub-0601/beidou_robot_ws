@@ -1,0 +1,11 @@
+{
+  "package_name": "beidou_interfaces",
+  "output_dir": "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_generator_type_description/beidou_interfaces",
+  "idl_tuples": [
+    "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_adapter/beidou_interfaces:msg/ElderlyMotion.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}

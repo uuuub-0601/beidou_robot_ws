@@ -1,0 +1,1 @@
+/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/rosidl_generator_cpp/beidou_interfaces/msg/detail/elderly_motion__builder.hpp

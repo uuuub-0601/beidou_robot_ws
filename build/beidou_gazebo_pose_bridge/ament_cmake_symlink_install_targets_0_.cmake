@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge/elderly_pose_bridge" "TARGETS" "elderly_pose_bridge" "DESTINATION" "lib/beidou_gazebo_pose_bridge")

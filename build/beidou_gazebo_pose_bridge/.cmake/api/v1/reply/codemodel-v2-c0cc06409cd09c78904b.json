@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-1e63670dfd4cee85b734.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "beidou_gazebo_pose_bridge",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "beidou_gazebo_pose_bridge_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-beidou_gazebo_pose_bridge_uninstall-b04d0c70a1bf6a39ff92.json",
+					"name" : "beidou_gazebo_pose_bridge_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "elderly_pose_bridge::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-elderly_pose_bridge-db706700d9ef32623308.json",
+					"name" : "elderly_pose_bridge",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-16ab36eb360a009cb740.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubbbb/beidou_robot_ws/build/beidou_gazebo_pose_bridge",
+		"source" : "/home/ubbbb/beidou_robot_ws/src/beidou_gazebo_pose_bridge"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

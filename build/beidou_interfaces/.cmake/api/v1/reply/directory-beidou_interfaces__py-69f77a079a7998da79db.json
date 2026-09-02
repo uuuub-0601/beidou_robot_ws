@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "beidou_interfaces__py",
+		"source" : "/home/ubbbb/beidou_robot_ws/build/beidou_interfaces/beidou_interfaces__py"
+	}
+}

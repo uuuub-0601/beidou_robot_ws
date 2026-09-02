@@ -1,0 +1,765 @@
+"""Follow a moving elderly person with one dynamic Nav2 session."""
+
+from copy import deepcopy
+import math
+import os
+
+from ament_index_python.packages import get_package_share_directory
+from beidou_interfaces.msg import ElderlyMotion
+from geometry_msgs.msg import Point, PoseStamped
+from nav2_msgs.action import NavigateToPose
+from nav2_msgs.msg import SpeedLimit
+import rclpy
+from rclpy.action import ActionClient
+from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
+from rclpy.signals import SignalHandlerOptions
+from std_msgs.msg import String, UInt32
+from tf2_ros import Buffer, TransformException, TransformListener
+from visualization_msgs.msg import Marker, MarkerArray
+
+
+STATE_WAITING = 'WAITING_FOR_DATA'
+STATE_APPROACHING = 'APPROACHING'
+STATE_FOLLOWING = 'NORMAL_FOLLOW'
+NAV_MODE_FOLLOW = 'FOLLOW'
+
+
+def calculate_dynamic_follow_target(
+    elderly_x,
+    elderly_y,
+    vx,
+    vy,
+    heading,
+    back_distance,
+    side_offset,
+    prediction_horizon,
+    robot_x=None,
+    robot_y=None,
+):
+    """Place a predicted target behind and to the side of the elderly.
+
+    Prefer a rear/side target on the same side of the elderly as the
+    robot, avoiding a route through the elderly's inflated obstacle.
+    """
+    heading_x = math.cos(heading)
+    heading_y = math.sin(heading)
+    side_x = -heading_y
+    side_y = heading_x
+    prediction_x = vx * prediction_horizon
+    prediction_y = vy * prediction_horizon
+
+    def _candidate(side_sign):
+        return (
+            elderly_x + prediction_x - back_distance * heading_x
+            + side_sign * side_offset * side_x,
+            elderly_y + prediction_y - back_distance * heading_y
+            + side_sign * side_offset * side_y,
+        )
+
+    target_x, target_y = _candidate(1.0)
+    if robot_x is not None and robot_y is not None:
+        robot_dx = robot_x - elderly_x
+        robot_dy = robot_y - elderly_y
+        robot_distance = math.hypot(robot_dx, robot_dy)
+        target_dx = target_x - elderly_x
+        target_dy = target_y - elderly_y
+        same_side = (
+            robot_distance <= 1e-6
+            or target_dx * robot_dx + target_dy * robot_dy > 0.0
+        )
+        if not same_side:
+            alternate_x, alternate_y = _candidate(-1.0)
+            alternate_dx = alternate_x - elderly_x
+            alternate_dy = alternate_y - elderly_y
+            if alternate_dx * robot_dx + alternate_dy * robot_dy > 0.0:
+                target_x, target_y = alternate_x, alternate_y
+            elif robot_distance > 1e-6:
+                radial_x = robot_dx / robot_distance
+                radial_y = robot_dy / robot_distance
+                target_x = (
+                    elderly_x + prediction_x + back_distance * radial_x
+                    + side_offset * side_x
+                )
+                target_y = (
+                    elderly_y + prediction_y + back_distance * radial_y
+                    + side_offset * side_y
+                )
+    if robot_x is not None and robot_y is not None:
+        # Keep the active Nav2 path from cutting through the elderly model.
+        segment_x = target_x - robot_x
+        segment_y = target_y - robot_y
+        segment_length_sq = segment_x * segment_x + segment_y * segment_y
+        if segment_length_sq > 1e-9:
+            projection = ((elderly_x - robot_x) * segment_x +
+                          (elderly_y - robot_y) * segment_y) / segment_length_sq
+            projection = max(0.0, min(1.0, projection))
+            closest_x = robot_x + projection * segment_x
+            closest_y = robot_y + projection * segment_y
+            clearance = math.hypot(closest_x - elderly_x, closest_y - elderly_y)
+            if clearance < 1.0 and robot_distance > 1e-6:
+                radial_x = robot_dx / robot_distance
+                radial_y = robot_dy / robot_distance
+                target_x = elderly_x + 2.0 * radial_x
+                target_y = elderly_y + 2.0 * radial_y
+    return target_x, target_y, heading
+
+
+def desired_speed_limit(
+    elderly_speed,
+    target_distance,
+    target_tolerance,
+    speed_margin,
+    catchup_gain,
+    minimum_active_speed,
+    maximum_speed,
+    companion_distance_satisfied=False,
+    stopped_speed_threshold=0.05,
+):
+    """Return an absolute Nav2 speed cap based on motion and lag."""
+    if companion_distance_satisfied and elderly_speed < stopped_speed_threshold:
+        return minimum_active_speed
+    catchup_error = max(0.0, target_distance - target_tolerance)
+    desired = elderly_speed + speed_margin + catchup_gain * catchup_error
+    return max(minimum_active_speed, min(maximum_speed, desired))
+
+
+def rate_limit(previous, target, elapsed, acceleration, deceleration):
+    """Limit how quickly a speed cap changes."""
+    if previous is None:
+        return target
+    if target >= previous:
+        return min(target, previous + acceleration * elapsed)
+    return max(target, previous - deceleration * elapsed)
+
+
+def companion_state(robot_elderly_distance, minimum_distance, maximum_distance):
+    """Classify whether the robot has reached companion range."""
+    if minimum_distance <= robot_elderly_distance <= maximum_distance:
+        return STATE_FOLLOWING
+    return STATE_APPROACHING
+
+
+def retry_interval_elapsed(now, last_attempt, minimum_interval):
+    """Return whether another outer Nav2 action may be attempted."""
+    return (
+        last_attempt is None
+        or now - last_attempt >= minimum_interval
+        or now < last_attempt
+    )
+
+
+def _pose_yaw(pose):
+    orientation = pose.pose.orientation
+    return math.atan2(
+        2.0 * (
+            orientation.w * orientation.z
+            + orientation.x * orientation.y
+        ),
+        1.0 - 2.0 * (
+            orientation.y * orientation.y
+            + orientation.z * orientation.z
+        ),
+    )
+
+
+def follow_target_changed(
+    target,
+    previous,
+    distance_threshold,
+    yaw_threshold,
+):
+    """Return whether a target changed enough to update the active goal."""
+    if previous is None:
+        return True
+    target_position = target.pose.position
+    previous_position = previous.pose.position
+    distance = math.hypot(
+        target_position.x - previous_position.x,
+        target_position.y - previous_position.y,
+    )
+    yaw_change = abs(math.atan2(
+        math.sin(_pose_yaw(target) - _pose_yaw(previous)),
+        math.cos(_pose_yaw(target) - _pose_yaw(previous)),
+    ))
+    return distance >= distance_threshold or yaw_change >= yaw_threshold
+
+
+class ElderlyCompanionV2(Node):
+    """Update a dynamic Nav2 goal and speed cap without publishing cmd_vel."""
+
+    def __init__(self):
+        super().__init__('elderly_companion_v2')
+        defaults = (
+            ('back_distance', 2.0),
+            ('side_offset', 0.0),
+            ('prediction_horizon', 0.6),
+            ('stopped_speed_threshold', 0.05),
+            ('minimum_companion_distance', 1.4),
+            ('maximum_companion_distance', 2.0),
+            ('target_tolerance', 0.25),
+            ('speed_margin', 0.05),
+            ('catchup_gain', 0.35),
+            ('minimum_active_speed', 0.03),
+            ('maximum_robot_speed', 0.5),
+            ('speed_limit_acceleration', 0.5),
+            ('speed_limit_deceleration', 0.5),
+            ('target_update_frequency', 5.0),
+            ('goal_update_distance_threshold', 0.10),
+            ('goal_update_yaw_threshold', 0.12),
+            ('visualization_frequency', 5.0),
+            ('minimum_action_retry_interval', 2.0),
+            ('map_frame', 'map'),
+            ('robot_frame', 'base_link'),
+            ('action_name', '/navigate_to_pose'),
+            ('goal_update_topic', '/goal_update'),
+            ('speed_limit_topic', '/speed_limit'),
+        )
+        for name, value in defaults:
+            self.declare_parameter(name, value)
+
+        self.back_distance = self._positive('back_distance')
+        self.side_offset = float(self.get_parameter('side_offset').value)
+        self.prediction_horizon = self._nonnegative('prediction_horizon')
+        self.minimum_distance = self._positive(
+            'minimum_companion_distance'
+        )
+        self.maximum_distance = self._positive(
+            'maximum_companion_distance'
+        )
+        self.stopped_speed_threshold = self._positive(
+            'stopped_speed_threshold'
+        )
+        self.target_tolerance = self._positive('target_tolerance')
+        self.speed_margin = self._nonnegative('speed_margin')
+        self.catchup_gain = self._nonnegative('catchup_gain')
+        self.minimum_active_speed = self._positive(
+            'minimum_active_speed'
+        )
+        self.maximum_robot_speed = self._positive('maximum_robot_speed')
+        self.speed_limit_acceleration = self._positive(
+            'speed_limit_acceleration'
+        )
+        self.speed_limit_deceleration = self._positive(
+            'speed_limit_deceleration'
+        )
+        target_frequency = self._positive('target_update_frequency')
+        self.goal_update_distance_threshold = self._positive(
+            'goal_update_distance_threshold'
+        )
+        self.goal_update_yaw_threshold = self._positive(
+            'goal_update_yaw_threshold'
+        )
+        visualization_frequency = self._positive(
+            'visualization_frequency'
+        )
+        self.minimum_action_retry_interval = self._positive(
+            'minimum_action_retry_interval'
+        )
+        if self.minimum_distance >= self.maximum_distance:
+            raise ValueError('companion distance bounds are invalid')
+        if self.maximum_robot_speed > 0.5:
+            raise ValueError('maximum_robot_speed must not exceed DWB 0.5 m/s')
+
+        self.map_frame = str(self.get_parameter('map_frame').value)
+        self.robot_frame = str(self.get_parameter('robot_frame').value)
+        action_name = str(self.get_parameter('action_name').value)
+        goal_update_topic = str(
+            self.get_parameter('goal_update_topic').value
+        )
+        speed_limit_topic = str(
+            self.get_parameter('speed_limit_topic').value
+        )
+        package_share = get_package_share_directory('beidou_gazebo')
+        self.behavior_tree = os.path.join(
+            package_share,
+            'behavior_trees',
+            'companion_follow.xml',
+        )
+
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
+        self.navigation_client = ActionClient(
+            self, NavigateToPose, action_name
+        )
+        durable_qos = QoSProfile(
+            depth=1,
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+        )
+        self.goal_update_publisher = self.create_publisher(
+            PoseStamped, goal_update_topic, 10
+        )
+        self.speed_limit_publisher = self.create_publisher(
+            SpeedLimit, speed_limit_topic, 10
+        )
+        self.state_publisher = self.create_publisher(
+            String, '/elderly_companion_v2_state', durable_qos
+        )
+        self.visualization_publisher = self.create_publisher(
+            MarkerArray,
+            '/elderly_companion_v2_visualization',
+            durable_qos,
+        )
+        self.goal_count_publisher = self.create_publisher(
+            UInt32, '/elderly_companion_v2_goal_count', durable_qos
+        )
+        self.goal_update_count_publisher = self.create_publisher(
+            UInt32,
+            '/elderly_companion_v2_goal_update_count',
+            durable_qos,
+        )
+        self.follow_target_publisher = self.create_publisher(
+            PoseStamped, '/elderly_follow_target', durable_qos
+        )
+        self.handoff_state_publisher = self.create_publisher(
+            String, '/elderly_companion_handoff_state', durable_qos
+        )
+        self.create_subscription(
+            PoseStamped, '/elderly_position', self._position_callback, 20
+        )
+        self.create_subscription(
+            ElderlyMotion, '/elderly_motion', self._motion_callback, 20
+        )
+        self.create_subscription(
+            String, '/elderly_navigation_mode', self._navigation_mode_callback,
+            durable_qos,
+        )
+
+        self.latest_elderly_pose = None
+        self.latest_motion = None
+        self.robot_pose = None
+        self.follow_target = None
+        self.goal_handle = None
+        self.goal_pending = False
+        self.navigation_mode = NAV_MODE_FOLLOW
+        self.pause_requested = False
+        self.cancel_pending = False
+        self.last_handoff_state = None
+        self.navigation_active = False
+        self.goal_count = 0
+        self.goal_update_count = 0
+        self.last_goal_update = None
+        self.last_goal_attempt_time = None
+        self.current_speed_limit = None
+        self.last_speed_update_time = None
+        self.state = STATE_WAITING
+        self.last_published_state = None
+        self.create_timer(1.0 / target_frequency, self._control_tick)
+        self.create_timer(
+            1.0 / visualization_frequency,
+            self._publish_visualization,
+        )
+        self._publish_state(force=True)
+        self._publish_goal_count()
+        self._publish_goal_update_count()
+        self._publish_handoff_state('ACTIVE')
+
+    def _positive(self, name):
+        value = float(self.get_parameter(name).value)
+        if value <= 0.0:
+            raise ValueError(f'{name} must be positive')
+        return value
+
+    def _nonnegative(self, name):
+        value = float(self.get_parameter(name).value)
+        if value < 0.0:
+            raise ValueError(f'{name} must be nonnegative')
+        return value
+
+    def _position_callback(self, message):
+        self.latest_elderly_pose = message
+
+    def _motion_callback(self, message):
+        self.latest_motion = message
+
+    def _navigation_mode_callback(self, message):
+        mode = str(message.data).strip().upper()
+        if mode not in ('FOLLOW', 'TRANSITION', 'GUARD', 'RETURN_TO_FOLLOW'):
+            return
+        if mode == self.navigation_mode:
+            return
+        self.navigation_mode = mode
+        if mode == NAV_MODE_FOLLOW:
+            self.pause_requested = False
+            self.cancel_pending = False
+            self._publish_handoff_state('RESUMED')
+            self.get_logger().info('[COMPANION V2] Navigation control resumed')
+            return
+        self.pause_requested = True
+        self._publish_handoff_state('CANCELING')
+        self._cancel_owned_goal_if_needed()
+
+    def _cancel_owned_goal_if_needed(self):
+        if self.goal_handle is not None and not self.cancel_pending:
+            self.cancel_pending = True
+            try:
+                future = self.goal_handle.cancel_goal_async()
+                future.add_done_callback(self._cancel_response)
+            except Exception as error:
+                self.get_logger().warning(
+                    f'[COMPANION V2] Goal cancellation request failed: {error}'
+                )
+        elif self.goal_handle is None and not self.goal_pending:
+            self._publish_handoff_state('PAUSED')
+
+    def _cancel_response(self, future):
+        try:
+            future.result()
+        except Exception as error:
+            self.get_logger().warning(
+                f'[COMPANION V2] Goal cancellation response failed: {error}'
+            )
+
+    def _control_tick(self):
+        if self.navigation_mode != NAV_MODE_FOLLOW:
+            return
+        if not self._update_robot_pose() or not self._data_is_ready():
+            return self._set_state(STATE_WAITING)
+
+        elderly = self.latest_elderly_pose.pose.position
+        motion = self.latest_motion
+        robot_x, robot_y = self.robot_pose
+        target_x, target_y, target_yaw = calculate_dynamic_follow_target(
+            elderly.x,
+            elderly.y,
+            motion.vx,
+            motion.vy,
+            motion.heading,
+            self.back_distance,
+            self.side_offset,
+            self.prediction_horizon,
+            robot_x=robot_x,
+            robot_y=robot_y,
+        )
+        self.follow_target = self._make_pose(
+            target_x, target_y, target_yaw
+        )
+        self.follow_target_publisher.publish(self.follow_target)
+        elderly_distance = math.hypot(
+            robot_x - elderly.x, robot_y - elderly.y
+        )
+        self._set_state(
+            companion_state(
+                elderly_distance,
+                self.minimum_distance,
+                self.maximum_distance,
+            )
+        )
+
+        now_seconds = self.get_clock().now().nanoseconds * 1e-9
+        retry_ready = retry_interval_elapsed(
+            now_seconds,
+            self.last_goal_attempt_time,
+            self.minimum_action_retry_interval,
+        )
+        if (
+            not self.navigation_active
+            and not self.goal_pending
+            and retry_ready
+        ):
+            self._start_navigation()
+        elif (
+            self.navigation_active
+            and follow_target_changed(
+                self.follow_target,
+                self.last_goal_update,
+                self.goal_update_distance_threshold,
+                self.goal_update_yaw_threshold,
+            )
+        ):
+            self._publish_goal_update()
+        self._update_speed_limit(robot_x, robot_y, motion.speed)
+
+    def _data_is_ready(self):
+        if self.latest_elderly_pose is None or self.latest_motion is None:
+            return False
+        return (
+            self.latest_elderly_pose.header.frame_id == self.map_frame
+            and self.latest_motion.header.frame_id == self.map_frame
+            and self.latest_motion.valid
+        )
+
+    def _update_robot_pose(self):
+        try:
+            transform = self.tf_buffer.lookup_transform(
+                self.map_frame,
+                self.robot_frame,
+                rclpy.time.Time(),
+            )
+        except TransformException:
+            self.robot_pose = None
+            return False
+        self.robot_pose = (
+            transform.transform.translation.x,
+            transform.transform.translation.y,
+        )
+        return True
+
+    def _start_navigation(self):
+        if self.navigation_mode != NAV_MODE_FOLLOW:
+            return
+        if not self.navigation_client.server_is_ready():
+            return self._set_state(STATE_WAITING)
+        goal = NavigateToPose.Goal()
+        goal.pose = self.follow_target
+        goal.behavior_tree = self.behavior_tree
+        self.goal_pending = True
+        self.last_goal_attempt_time = (
+            self.get_clock().now().nanoseconds * 1e-9
+        )
+        self.goal_count += 1
+        self._publish_goal_count()
+        self.get_logger().info(
+            f'[COMPANION V2] Starting dynamic goal #{self.goal_count}'
+        )
+        future = self.navigation_client.send_goal_async(goal)
+        future.add_done_callback(self._goal_response)
+
+    def _goal_response(self, future):
+        self.goal_pending = False
+        try:
+            goal_handle = future.result()
+        except Exception as error:
+            self.get_logger().error(f'Goal response failed: {error}')
+            if self.pause_requested:
+                self._publish_handoff_state('PAUSED')
+            return
+        if not goal_handle.accepted:
+            self.get_logger().error('Dynamic companion goal was rejected')
+            if self.pause_requested:
+                self._publish_handoff_state('PAUSED')
+            return
+        self.goal_handle = goal_handle
+        self.navigation_active = True
+        if self.navigation_mode != NAV_MODE_FOLLOW:
+            self._cancel_owned_goal_if_needed()
+            return
+        self.get_logger().info('[COMPANION V2] Dynamic goal accepted')
+        self._publish_goal_update()
+        result_future = goal_handle.get_result_async()
+        result_future.add_done_callback(self._goal_result)
+
+    def _goal_result(self, future):
+        try:
+            result = future.result()
+            detail = f'status={result.status}'
+        except Exception as error:
+            detail = str(error)
+        self.navigation_active = False
+        self.goal_handle = None
+        self.last_goal_update = None
+        self.cancel_pending = False
+        if self.pause_requested and self.navigation_mode != NAV_MODE_FOLLOW:
+            self._publish_handoff_state('PAUSED')
+        self.get_logger().warning(
+            f'[COMPANION V2] Dynamic session ended: {detail}'
+        )
+
+    def _update_speed_limit(self, robot_x, robot_y, elderly_speed):
+        target = self.follow_target.pose.position
+        target_distance = math.hypot(
+            robot_x - target.x, robot_y - target.y
+        )
+        desired = desired_speed_limit(
+            elderly_speed,
+            target_distance,
+            self.target_tolerance,
+            self.speed_margin,
+            self.catchup_gain,
+            self.minimum_active_speed,
+            self.maximum_robot_speed,
+            self.state == STATE_FOLLOWING,
+            self.stopped_speed_threshold,
+        )
+        now = self.get_clock().now()
+        if self.last_speed_update_time is None:
+            elapsed = 0.0
+        else:
+            elapsed = (now - self.last_speed_update_time).nanoseconds * 1e-9
+        self.current_speed_limit = rate_limit(
+            self.current_speed_limit,
+            desired,
+            elapsed,
+            self.speed_limit_acceleration,
+            self.speed_limit_deceleration,
+        )
+        self.last_speed_update_time = now
+        message = SpeedLimit()
+        message.header.stamp = now.to_msg()
+        message.percentage = False
+        message.speed_limit = self.current_speed_limit
+        self.speed_limit_publisher.publish(message)
+
+    def _make_pose(self, x, y, yaw):
+        pose = PoseStamped()
+        pose.header.frame_id = self.map_frame
+        pose.header.stamp = self.get_clock().now().to_msg()
+        pose.pose.position.x = x
+        pose.pose.position.y = y
+        pose.pose.orientation.z = math.sin(yaw / 2.0)
+        pose.pose.orientation.w = math.cos(yaw / 2.0)
+        return pose
+
+    def _set_state(self, state):
+        if state != self.state:
+            self.state = state
+            self._publish_state()
+
+    def _publish_state(self, force=False):
+        if force or self.state != self.last_published_state:
+            self.state_publisher.publish(String(data=self.state))
+            self.last_published_state = self.state
+
+    def _publish_goal_count(self):
+        self.goal_count_publisher.publish(UInt32(data=self.goal_count))
+
+    def _publish_goal_update_count(self):
+        self.goal_update_count_publisher.publish(
+            UInt32(data=self.goal_update_count)
+        )
+
+    def _publish_goal_update(self):
+        self.goal_update_publisher.publish(self.follow_target)
+        self.last_goal_update = deepcopy(self.follow_target)
+        self.goal_update_count += 1
+        self._publish_goal_update_count()
+
+    def _publish_visualization(self):
+        self._publish_state(force=True)
+        markers = []
+        stamp = self.get_clock().now().to_msg()
+        if self.latest_elderly_pose is not None:
+            markers.append(self._elderly_marker(stamp))
+        if self.robot_pose is not None:
+            markers.append(self._robot_marker(stamp))
+        if self.latest_elderly_pose is not None and self.latest_motion is not None:
+            markers.append(self._heading_marker(stamp))
+        if self.follow_target is not None:
+            markers.append(self._target_marker(stamp))
+            markers.append(self._relationship_marker(stamp))
+        markers.append(self._text_marker(stamp))
+        self.visualization_publisher.publish(MarkerArray(markers=markers))
+
+    def _base_marker(self, stamp, marker_id, marker_type):
+        marker = Marker()
+        marker.header.frame_id = self.map_frame
+        marker.header.stamp = stamp
+        marker.ns = 'elderly_companion_v2'
+        marker.id = marker_id
+        marker.type = marker_type
+        marker.action = Marker.ADD
+        marker.pose.orientation.w = 1.0
+        marker.color.a = 1.0
+        return marker
+
+    def _elderly_marker(self, stamp):
+        marker = self._base_marker(stamp, 0, Marker.SPHERE)
+        marker.pose = deepcopy(self.latest_elderly_pose.pose)
+        marker.pose.position.z = 0.65
+        marker.scale.x = marker.scale.y = marker.scale.z = 0.55
+        marker.color.g = 1.0
+        return marker
+
+    def _robot_marker(self, stamp):
+        marker = self._base_marker(stamp, 1, Marker.CUBE)
+        marker.pose.position.x = self.robot_pose[0]
+        marker.pose.position.y = self.robot_pose[1]
+        marker.pose.position.z = 0.3
+        marker.scale.x = 1.0
+        marker.scale.y = 0.7
+        marker.scale.z = 0.3
+        marker.color.b = 1.0
+        marker.color.g = 0.6
+        return marker
+
+    def _heading_marker(self, stamp):
+        marker = self._base_marker(stamp, 2, Marker.ARROW)
+        elderly = self.latest_elderly_pose.pose.position
+        heading = self.latest_motion.heading
+        length = max(0.8, self.latest_motion.speed * 2.0)
+        marker.points = [
+            Point(x=elderly.x, y=elderly.y, z=0.9),
+            Point(
+                x=elderly.x + length * math.cos(heading),
+                y=elderly.y + length * math.sin(heading),
+                z=0.9,
+            ),
+        ]
+        marker.scale.x = 0.1
+        marker.scale.y = 0.22
+        marker.scale.z = 0.22
+        marker.color.r = 1.0
+        marker.color.g = 0.65
+        return marker
+
+    def _target_marker(self, stamp):
+        marker = self._base_marker(stamp, 3, Marker.SPHERE)
+        marker.pose = deepcopy(self.follow_target.pose)
+        marker.pose.position.z = 0.35
+        marker.scale.x = marker.scale.y = marker.scale.z = 0.4
+        marker.color.r = 0.1
+        marker.color.g = 0.75
+        marker.color.b = 1.0
+        return marker
+
+    def _relationship_marker(self, stamp):
+        marker = self._base_marker(stamp, 4, Marker.LINE_STRIP)
+        elderly = self.latest_elderly_pose.pose.position
+        target = self.follow_target.pose.position
+        marker.points = [
+            Point(x=elderly.x, y=elderly.y, z=0.4),
+            Point(x=target.x, y=target.y, z=0.4),
+        ]
+        marker.scale.x = 0.06
+        marker.color.g = 0.8
+        marker.color.b = 1.0
+        return marker
+
+    def _text_marker(self, stamp):
+        marker = self._base_marker(stamp, 5, Marker.TEXT_VIEW_FACING)
+        if self.latest_elderly_pose is not None:
+            marker.pose.position.x = self.latest_elderly_pose.pose.position.x
+            marker.pose.position.y = self.latest_elderly_pose.pose.position.y
+        marker.pose.position.z = 2.2
+        marker.scale.z = 0.45
+        marker.color.r = marker.color.g = marker.color.b = 1.0
+        speed = self.latest_motion.speed if self.latest_motion else 0.0
+        limit = self.current_speed_limit or 0.0
+        marker.text = (
+            f'{self.state} | elder={speed:.2f} m/s | limit={limit:.2f}'
+        )
+        return marker
+
+    def _publish_handoff_state(self, state):
+        if state != self.last_handoff_state:
+            self.handoff_state_publisher.publish(String(data=state))
+            self.last_handoff_state = state
+
+    def stop(self):
+        """Release Nav2 speed limiting and cancel the owned action."""
+        reset = SpeedLimit()
+        reset.header.stamp = self.get_clock().now().to_msg()
+        reset.percentage = False
+        reset.speed_limit = 0.0
+        self.speed_limit_publisher.publish(reset)
+        if self.goal_handle is not None:
+            self.goal_handle.cancel_goal_async()
+
+
+def main(args=None):
+    rclpy.init(
+        args=args,
+        signal_handler_options=SignalHandlerOptions.NO,
+    )
+    node = ElderlyCompanionV2()
+    try:
+        rclpy.spin(node)
+    except (KeyboardInterrupt, RuntimeError):
+        pass
+    finally:
+        if rclpy.ok():
+            node.stop()
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()

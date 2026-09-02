@@ -1,0 +1,26 @@
+elderly_geofence:
+  ros__parameters:
+    danger_distance: 0.5
+    warning_distance: 1.0
+    hysteresis: 0.1
+    position_timeout: 1.0
+    map_frame: map
+    obstacles:
+      final_flowerbed:
+        polygon: [[-3.75, 1.25], [-1.25, 1.25], [-1.25, 2.75], [-3.75, 2.75]]
+      final_bench_west:
+        polygon: [[-4.8, -2.45], [-3.2, -2.45], [-3.2, -1.95], [-4.8, -1.95]]
+      final_bench_east:
+        polygon: [[-0.8, -2.45], [0.8, -2.45], [0.8, -1.95], [-0.8, -1.95]]
+      final_table:
+        polygon: [[-1.6, -0.6], [-0.4, -0.6], [-0.4, 0.6], [-1.6, 0.6]]
+      final_partition:
+        polygon: [[6.9, -2.4], [7.5, -2.4], [7.5, 0.4], [6.9, 0.4]]
+      wall_left:
+        polygon: [[-10.15, -8.0], [-9.85, -8.0], [-9.85, 8.0], [-10.15, 8.0]]
+      wall_right:
+        polygon: [[9.85, -8.0], [10.15, -8.0], [10.15, 8.0], [9.85, 8.0]]
+      wall_back:
+        polygon: [[-10.0, 7.85], [10.0, 7.85], [10.0, 8.15], [-10.0, 8.15]]
+      wall_front:
+        polygon: [[-10.0, -8.15], [10.0, -8.15], [10.0, -7.85], [-10.0, -7.85]]
