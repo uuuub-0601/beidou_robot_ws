@@ -10,6 +10,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ElderlyMotion.msg"
   "msg/ElderlyMotionStamped.msg"
   "msg/ElderlyMotionArray.msg"
+  "msg/ElderlyRisk.msg"
+  "msg/ElderlyRiskArray.msg"
   "msg/ElderlyPosition.msg"
   "msg/ElderlyPositionArray.msg"
   DEPENDENCIES std_msgs geometry_msgs
