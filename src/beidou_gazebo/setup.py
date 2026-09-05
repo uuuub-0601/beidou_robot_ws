@@ -53,6 +53,8 @@ setup(
             'beidou_gazebo.elderly_walker:main',
             'elderly_motion_estimator = '
             'beidou_gazebo.elderly_motion_estimator:main',
+            'multi_elderly_motion_estimator = '
+            'beidou_gazebo.multi_elderly_motion_estimator:main',
             'elderly_companion_v2 = '
             'beidou_gazebo.elderly_companion_v2:main',
             'elderly_rviz_status = '
