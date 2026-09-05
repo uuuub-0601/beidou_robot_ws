@@ -459,6 +459,37 @@
       </plugin>
 
     </model>
+    <!-- ==================== Additional V2.0 elderly models ==================== -->
+    <!-- Original `elder` model is retained for V1 compatibility. -->
+    <model name="elder_01">
+      <pose>2.5 5.5 0 0 0 3.14159</pose><static>false</static>
+      <link name="body_link"><pose>0 0 0.75 0 0 0</pose><gravity>false</gravity><inertial><mass>60.0</mass><inertia><ixx>12.6</ixx><iyy>12.6</iyy><izz>2.7</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="body_collision"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry></collision><visual name="body_visual"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry><material><ambient>0.2 0.3 0.8 1</ambient><diffuse>0.3 0.4 0.9 1</diffuse></material></visual></link>
+      <link name="head_link"><pose>0 0 1.7 0 0 0</pose><gravity>false</gravity><inertial><mass>5.0</mass><inertia><ixx>0.125</ixx><iyy>0.125</iyy><izz>0.125</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="head_collision"><geometry><sphere><radius>0.25</radius></sphere></geometry></collision><visual name="head_visual"><geometry><sphere><radius>0.25</radius></sphere></geometry><material><ambient>0.9 0.7 0.5 1</ambient><diffuse>1 0.8 0.6 1</diffuse></material></visual></link>
+      <joint name="head_fixed_joint" type="fixed"><parent>body_link</parent><child>head_link</child></joint>
+      <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl"><topic>/model/elder_01/cmd_vel</topic></plugin>
+    </model>
+    <model name="elder_02">
+      <pose>-6.0 4.5 0 0 0 3.14159</pose><static>false</static>
+      <link name="body_link"><pose>0 0 0.75 0 0 0</pose><gravity>false</gravity><inertial><mass>60.0</mass><inertia><ixx>12.6</ixx><iyy>12.6</iyy><izz>2.7</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="body_collision"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry></collision><visual name="body_visual"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry><material><ambient>0.2 0.3 0.8 1</ambient><diffuse>0.3 0.4 0.9 1</diffuse></material></visual></link>
+      <link name="head_link"><pose>0 0 1.7 0 0 0</pose><gravity>false</gravity><inertial><mass>5.0</mass><inertia><ixx>0.125</ixx><iyy>0.125</iyy><izz>0.125</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="head_collision"><geometry><sphere><radius>0.25</radius></sphere></geometry></collision><visual name="head_visual"><geometry><sphere><radius>0.25</radius></sphere></geometry><material><ambient>0.9 0.7 0.5 1</ambient><diffuse>1 0.8 0.6 1</diffuse></material></visual></link>
+      <joint name="head_fixed_joint" type="fixed"><parent>body_link</parent><child>head_link</child></joint>
+      <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl"><topic>/model/elder_02/cmd_vel</topic></plugin>
+    </model>
+    <model name="elder_03">
+      <pose>6.0 5.5 0 0 0 3.14159</pose><static>false</static>
+      <link name="body_link"><pose>0 0 0.75 0 0 0</pose><gravity>false</gravity><inertial><mass>60.0</mass><inertia><ixx>12.6</ixx><iyy>12.6</iyy><izz>2.7</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="body_collision"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry></collision><visual name="body_visual"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry><material><ambient>0.2 0.3 0.8 1</ambient><diffuse>0.3 0.4 0.9 1</diffuse></material></visual></link>
+      <link name="head_link"><pose>0 0 1.7 0 0 0</pose><gravity>false</gravity><inertial><mass>5.0</mass><inertia><ixx>0.125</ixx><iyy>0.125</iyy><izz>0.125</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="head_collision"><geometry><sphere><radius>0.25</radius></sphere></geometry></collision><visual name="head_visual"><geometry><sphere><radius>0.25</radius></sphere></geometry><material><ambient>0.9 0.7 0.5 1</ambient><diffuse>1 0.8 0.6 1</diffuse></material></visual></link>
+      <joint name="head_fixed_joint" type="fixed"><parent>body_link</parent><child>head_link</child></joint>
+      <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl"><topic>/model/elder_03/cmd_vel</topic></plugin>
+    </model>
+    <model name="elder_04">
+      <pose>4.5 -4.5 0 0 0 3.14159</pose><static>false</static>
+      <link name="body_link"><pose>0 0 0.75 0 0 0</pose><gravity>false</gravity><inertial><mass>60.0</mass><inertia><ixx>12.6</ixx><iyy>12.6</iyy><izz>2.7</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="body_collision"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry></collision><visual name="body_visual"><geometry><cylinder><radius>0.3</radius><length>1.5</length></cylinder></geometry><material><ambient>0.2 0.3 0.8 1</ambient><diffuse>0.3 0.4 0.9 1</diffuse></material></visual></link>
+      <link name="head_link"><pose>0 0 1.7 0 0 0</pose><gravity>false</gravity><inertial><mass>5.0</mass><inertia><ixx>0.125</ixx><iyy>0.125</iyy><izz>0.125</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial><collision name="head_collision"><geometry><sphere><radius>0.25</radius></sphere></geometry></collision><visual name="head_visual"><geometry><sphere><radius>0.25</radius></sphere></geometry><material><ambient>0.9 0.7 0.5 1</ambient><diffuse>1 0.8 0.6 1</diffuse></material></visual></link>
+      <joint name="head_fixed_joint" type="fixed"><parent>body_link</parent><child>head_link</child></joint>
+      <plugin filename="gz-sim-velocity-control-system" name="gz::sim::systems::VelocityControl"><topic>/model/elder_04/cmd_vel</topic></plugin>
+    </model>
+
 <!-- ==================== 移动机器人 ==================== -->
 
 <include>
