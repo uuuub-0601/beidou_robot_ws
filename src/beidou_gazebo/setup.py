@@ -37,6 +37,8 @@ setup(
         'console_scripts': [
             'beidou_position_publisher = '
             'beidou_gazebo.beidou_position_publisher:main',
+            'multi_beidou_position_publisher = '
+            'beidou_gazebo.multi_beidou_position_publisher:main',
             'elderly_geofence = '
             'beidou_gazebo.elderly_geofence:main',
             'elderly_guard_navigation = '
