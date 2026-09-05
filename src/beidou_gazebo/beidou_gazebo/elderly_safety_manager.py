@@ -3,10 +3,11 @@
 from dataclasses import dataclass
 import math
 
-from beidou_interfaces.msg import ElderlyEvent, ElderlyRiskArray
+from beidou_interfaces.msg import ElderlyEvent, ElderlyPositionArray, ElderlyRiskArray
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
+from tf2_ros import Buffer, TransformException, TransformListener
 
 STATE_SAFE = 'SAFE'
 STATE_WARNING = 'WARNING'
@@ -33,6 +34,12 @@ class ElderlyEventState:
     event_counter: int = 0
     danger_entry_time: float = math.inf
     last_distance: float = math.nan
+    elderly_x: float = math.nan
+    elderly_y: float = math.nan
+    position_valid: bool = False
+    position_stamp: float = 0.0
+    position_frame: str = ''
+    robot_distance: float = math.inf
 
 
 @dataclass(frozen=True)
@@ -51,11 +58,43 @@ class EventRecord:
 class SafetyEventManager:
     """Convert risk edges into one-shot events and select one active target."""
 
-    def __init__(self, elderly_ids):
+    def __init__(self, elderly_ids, map_frame='map'):
         self.elderly_ids = tuple(dict.fromkeys(str(i) for i in elderly_ids))
         self.tracks = {i: ElderlyEventState() for i in self.elderly_ids}
         self.manager_state = MANAGER_STANDBY
         self.received_risks = False
+        self.map_frame = str(map_frame)
+        self.robot_x = math.nan
+        self.robot_y = math.nan
+        self.robot_pose_valid = False
+
+    def update_position(self, elderly_id, x, y, stamp, valid=True,
+                        frame_id='map'):
+        self.ensure_id(elderly_id)
+        if elderly_id:
+            track = self.tracks[elderly_id]
+            track.elderly_x = float(x)
+            track.elderly_y = float(y)
+            track.position_stamp = float(stamp)
+            track.position_valid = bool(valid)
+            track.position_frame = str(frame_id)
+
+    def set_robot_pose(self, x, y, valid=True):
+        self.robot_x, self.robot_y = float(x), float(y)
+        self.robot_pose_valid = (
+            bool(valid) and math.isfinite(self.robot_x)
+            and math.isfinite(self.robot_y)
+        )
+
+    def robot_distance(self, elderly_id):
+        track = self.tracks[elderly_id]
+        if (not self.robot_pose_valid or not track.position_valid or
+                track.position_frame != self.map_frame or
+                not math.isfinite(track.elderly_x) or
+                not math.isfinite(track.elderly_y)):
+            return math.inf
+        return math.hypot(track.elderly_x - self.robot_x,
+                          track.elderly_y - self.robot_y)
 
     def ensure_id(self, elderly_id):
         if elderly_id and elderly_id not in self.tracks:
@@ -100,6 +139,7 @@ class SafetyEventManager:
         track = self.tracks[elderly_id]
         previous = track.state
         track.last_distance = distance
+        track.robot_distance = self.robot_distance(elderly_id)
         events = []
         old_hazard = previous in (STATE_WARNING, STATE_DANGER)
         new_hazard = new_state in (STATE_WARNING, STATE_DANGER)
@@ -157,6 +197,10 @@ class SafetyEventManager:
                            priority, state, distance, stamp)
 
     def _select_current(self):
+        for elderly_id in self.tracks:
+            self.tracks[elderly_id].robot_distance = self.robot_distance(
+                elderly_id
+            )
         active = [
             (elderly_id, track) for elderly_id, track in self.tracks.items()
             if track.state in (STATE_WARNING, STATE_DANGER)
@@ -169,6 +213,8 @@ class SafetyEventManager:
         candidates = danger or active
         selected = min(candidates, key=lambda item: (
             item[1].danger_entry_time if item[1].state == STATE_DANGER else math.inf,
+            (item[1].robot_distance if item[1].state == STATE_DANGER
+             else math.inf),
             item[0],
         ))
         self.manager_state = MANAGER_EVENT_SELECTED
@@ -189,6 +235,8 @@ class ElderlySafetyManager(Node):
     def __init__(self):
         super().__init__('elderly_safety_manager')
         self.declare_parameter('publish_frequency', 5.0)
+        self.declare_parameter('map_frame', 'map')
+        self.declare_parameter('robot_frame', 'base_link')
         self.declare_parameter(
             'elderly_ids',
             ['elder', 'elder_01', 'elder_02', 'elder_03', 'elder_04'],
@@ -197,7 +245,11 @@ class ElderlySafetyManager(Node):
         if frequency <= 0.0:
             raise ValueError('publish_frequency must be positive')
         ids = self.get_parameter('elderly_ids').value
-        self.manager = SafetyEventManager(ids)
+        self.map_frame = str(self.get_parameter('map_frame').value)
+        self.robot_frame = str(self.get_parameter('robot_frame').value)
+        self.manager = SafetyEventManager(ids, self.map_frame)
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self)
         self.event_pub = self.create_publisher(ElderlyEvent, '/elderly/events', 10)
         self.current_pub = self.create_publisher(String, '/elderly/current_event', 10)
         self.state_pub = self.create_publisher(
@@ -205,6 +257,8 @@ class ElderlySafetyManager(Node):
         )
         self.create_subscription(ElderlyRiskArray, '/elderly/risks',
                                  self._risk_callback, 20)
+        self.create_subscription(ElderlyPositionArray, '/elderly/positions',
+                                 self._position_callback, 20)
         self.create_timer(1.0 / frequency, self._publish_status)
 
     def _risk_callback(self, message):
@@ -228,11 +282,40 @@ class ElderlySafetyManager(Node):
             output.distance_to_danger = event.distance_to_danger
             self.event_pub.publish(output)
 
+    def _position_callback(self, message):
+        array_stamp = message.header.stamp.sec + message.header.stamp.nanosec * 1e-9
+        now = self.get_clock().now().nanoseconds * 1e-9
+        for position in message.positions:
+            stamp = position.header.stamp.sec + position.header.stamp.nanosec * 1e-9
+            if stamp <= 0.0:
+                stamp = array_stamp if array_stamp > 0.0 else now
+            self.manager.update_position(
+                position.elderly_id, position.pose.position.x,
+                position.pose.position.y, stamp, position.valid,
+                position.header.frame_id or message.header.frame_id,
+            )
+
+    def _update_robot_pose(self):
+        try:
+            transform = self.tf_buffer.lookup_transform(
+                self.map_frame, self.robot_frame, rclpy.time.Time()
+            )
+            self.manager.set_robot_pose(
+                transform.transform.translation.x,
+                transform.transform.translation.y,
+                True,
+            )
+        except TransformException:
+            self.manager.set_robot_pose(math.nan, math.nan, False)
+
     def _publish_status(self):
+        self._update_robot_pose()
         current = self.manager.current_event()
         if current:
             elderly_id, event_id, state = current
-            text = f'event_id={event_id} elderly_id={elderly_id} state={state}'
+            distance = self.manager.tracks[elderly_id].robot_distance
+            text = (f'event_id={event_id} elderly_id={elderly_id} '
+                    f'state={state} robot_distance={distance}')
         else:
             text = ''
         self.current_pub.publish(String(data=text))

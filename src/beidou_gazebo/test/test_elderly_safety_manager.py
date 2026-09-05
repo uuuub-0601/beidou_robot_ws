@@ -1,4 +1,6 @@
-"""Unit tests for Stage 5A safety event management."""
+"""Unit tests for Stage 5A/5B safety event management."""
+
+import math
 
 from beidou_gazebo.elderly_safety_manager import (
     EVENT_DANGER_ENTER,
@@ -105,3 +107,76 @@ def test_all_safe_or_unknown_returns_monitoring():
     process(manager, 'elder_02', STATE_UNKNOWN, float('nan'), 1.0)
     assert manager.current_event() is None
     assert manager.manager_state == MANAGER_MONITORING
+
+
+def set_danger(manager, elderly_id, stamp):
+    """Set one ID to DANGER while preserving a complete risk array."""
+    risks = []
+    for current_id in manager.elderly_ids:
+        track = manager.tracks[current_id]
+        risks.append({
+            'elderly_id': current_id,
+            'state': STATE_DANGER if current_id == elderly_id else track.state,
+            'distance_to_danger': 0.0 if current_id == elderly_id
+            else track.last_distance,
+        })
+    return manager.process(risks, stamp)
+
+
+def test_equal_entry_time_prefers_nearer_robot_distance():
+    manager = SafetyEventManager(['elder_01', 'elder_02'])
+    manager.set_robot_pose(0.0, 0.0)
+    for elderly_id, point in (('elder_01', (1.0, 0.0)),
+                              ('elder_02', (5.0, 0.0))):
+        manager.update_position(elderly_id, *point, 1.0, True, 'map')
+    set_danger(manager, 'elder_01', 10.0)
+    set_danger(manager, 'elder_02', 10.0)
+    assert manager.current_event()[0] == 'elder_01'
+    assert manager.tracks['elder_01'].robot_distance == 1.0
+
+
+def test_equal_entry_time_uses_nearest_when_second_is_closer():
+    manager = SafetyEventManager(['elder_01', 'elder_02'])
+    manager.set_robot_pose(0.0, 0.0)
+    manager.update_position('elder_01', 5.0, 0.0, 1.0, True, 'map')
+    manager.update_position('elder_02', 1.0, 0.0, 1.0, True, 'map')
+    set_danger(manager, 'elder_01', 10.0)
+    set_danger(manager, 'elder_02', 10.0)
+    assert manager.current_event()[0] == 'elder_02'
+
+
+def test_earlier_danger_entry_beats_nearer_distance():
+    manager = SafetyEventManager(['elder_01', 'elder_02'])
+    manager.set_robot_pose(0.0, 0.0)
+    manager.update_position('elder_01', 5.0, 0.0, 1.0, True, 'map')
+    manager.update_position('elder_02', 1.0, 0.0, 1.0, True, 'map')
+    set_danger(manager, 'elder_01', 10.0)
+    set_danger(manager, 'elder_02', 20.0)
+    assert manager.current_event()[0] == 'elder_01'
+
+
+def test_equal_entry_and_distance_uses_id_tiebreak():
+    manager = SafetyEventManager(['elder_02', 'elder_01'])
+    manager.set_robot_pose(0.0, 0.0)
+    manager.update_position('elder_01', 1.0, 0.0, 1.0, True, 'map')
+    manager.update_position('elder_02', -1.0, 0.0, 1.0, True, 'map')
+    set_danger(manager, 'elder_02', 10.0)
+    set_danger(manager, 'elder_01', 10.0)
+    assert manager.current_event()[0] == 'elder_01'
+
+
+def test_invalid_robot_pose_falls_back_to_id_order():
+    manager = SafetyEventManager(['elder_02', 'elder_01'])
+    manager.set_robot_pose(0.0, 0.0, False)
+    set_danger(manager, 'elder_02', 10.0)
+    set_danger(manager, 'elder_01', 10.0)
+    assert manager.current_event()[0] == 'elder_01'
+    assert math.isinf(manager.tracks['elder_01'].robot_distance)
+
+
+def test_non_map_position_is_not_used_for_distance():
+    manager = SafetyEventManager(['elder_01'])
+    manager.set_robot_pose(0.0, 0.0)
+    manager.update_position('elder_01', 1.0, 0.0, 1.0, True, 'odom')
+    set_danger(manager, 'elder_01', 10.0)
+    assert math.isinf(manager.tracks['elder_01'].robot_distance)
