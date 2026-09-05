@@ -4,7 +4,10 @@ from dataclasses import dataclass
 import math
 
 from beidou_interfaces.msg import ElderlyEvent, ElderlyPositionArray, ElderlyRiskArray
+from geometry_msgs.msg import PoseStamped
+from nav2_msgs.action import NavigateToPose
 import rclpy
+from rclpy.action import ActionClient
 from rclpy.node import Node
 from std_msgs.msg import String
 from tf2_ros import Buffer, TransformException, TransformListener
@@ -17,6 +20,9 @@ STATE_UNKNOWN = 'UNKNOWN'
 MANAGER_STANDBY = 'STANDBY'
 MANAGER_MONITORING = 'MONITORING'
 MANAGER_EVENT_SELECTED = 'EVENT_SELECTED'
+MANAGER_GO_TO_ELDERLY = 'GO_TO_ELDERLY'
+MANAGER_ARRIVED_NEAR_ELDERLY = 'ARRIVED_NEAR_ELDERLY'
+MANAGER_NAVIGATION_FAILED = 'NAVIGATION_FAILED'
 
 EVENT_WARNING_ENTER = 'WARNING_ENTER'
 EVENT_DANGER_ENTER = 'DANGER_ENTER'
@@ -53,6 +59,72 @@ class EventRecord:
     state: str
     distance_to_danger: float
     stamp: float
+
+
+@dataclass(frozen=True)
+class ApproachPose:
+    """Map-frame approach position and yaw facing the elderly person."""
+
+    x: float
+    y: float
+    yaw: float
+
+
+def compute_approach_pose(robot_x, robot_y, elderly_x, elderly_y,
+                          approach_distance=1.3):
+    """Return a point between robot and elderly, facing the elderly."""
+    dx = float(elderly_x) - float(robot_x)
+    dy = float(elderly_y) - float(robot_y)
+    norm = math.hypot(dx, dy)
+    if (not math.isfinite(norm) or norm <= 1e-9 or
+            approach_distance <= 0.0):
+        return None
+    x = float(elderly_x) - dx / norm * float(approach_distance)
+    y = float(elderly_y) - dy / norm * float(approach_distance)
+    return ApproachPose(x, y, math.atan2(dy, dx))
+
+
+class NavigationCoordinator:
+    """Lock one DANGER event to one Nav2 goal until a terminal result."""
+
+    def __init__(self):
+        self.active_event_id = ''
+        self.target_id = ''
+        self.state = MANAGER_MONITORING
+        self.goal_sent_count = 0
+        self.failed_event_ids = set()
+
+    def can_start(self, event_id, elderly_id, risk_state):
+        return (risk_state == STATE_DANGER and bool(event_id) and
+                not self.active_event_id and event_id not in self.failed_event_ids)
+
+    def begin(self, event_id, elderly_id):
+        if self.active_event_id:
+            return False
+        self.active_event_id = event_id
+        self.target_id = elderly_id
+        self.goal_sent_count += 1
+        self.state = MANAGER_GO_TO_ELDERLY
+        return True
+
+    def result(self, succeeded):
+        if not self.active_event_id:
+            return False
+        event_id = self.active_event_id
+        if succeeded:
+            self.state = MANAGER_ARRIVED_NEAR_ELDERLY
+        else:
+            self.failed_event_ids.add(event_id)
+            self.state = MANAGER_NAVIGATION_FAILED
+        return event_id
+
+    def cancel(self):
+        if not self.active_event_id:
+            return False
+        self.active_event_id = ''
+        self.target_id = ''
+        self.state = MANAGER_MONITORING
+        return True
 
 
 class SafetyEventManager:
@@ -237,6 +309,7 @@ class ElderlySafetyManager(Node):
         self.declare_parameter('publish_frequency', 5.0)
         self.declare_parameter('map_frame', 'map')
         self.declare_parameter('robot_frame', 'base_link')
+        self.declare_parameter('approach_distance', 1.3)
         self.declare_parameter(
             'elderly_ids',
             ['elder', 'elder_01', 'elder_02', 'elder_03', 'elder_04'],
@@ -247,7 +320,17 @@ class ElderlySafetyManager(Node):
         ids = self.get_parameter('elderly_ids').value
         self.map_frame = str(self.get_parameter('map_frame').value)
         self.robot_frame = str(self.get_parameter('robot_frame').value)
+        self.approach_distance = float(
+            self.get_parameter('approach_distance').value
+        )
+        if self.approach_distance <= 0.0:
+            raise ValueError('approach_distance must be positive')
         self.manager = SafetyEventManager(ids, self.map_frame)
+        self.navigation = NavigationCoordinator()
+        self.navigate_client = ActionClient(
+            self, NavigateToPose, '/navigate_to_pose'
+        )
+        self._goal_handle = None
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.event_pub = self.create_publisher(ElderlyEvent, '/elderly/events', 10)
@@ -281,6 +364,12 @@ class ElderlySafetyManager(Node):
             output.state = event.state
             output.distance_to_danger = event.distance_to_danger
             self.event_pub.publish(output)
+        target_id = self.navigation.target_id
+        if target_id:
+            target_state = self.manager.tracks[target_id].state
+            if target_state == STATE_SAFE:
+                self._cancel_navigation()
+        self._maybe_start_navigation()
 
     def _position_callback(self, message):
         array_stamp = message.header.stamp.sec + message.header.stamp.nanosec * 1e-9
@@ -294,6 +383,81 @@ class ElderlySafetyManager(Node):
                 position.pose.position.y, stamp, position.valid,
                 position.header.frame_id or message.header.frame_id,
             )
+        self._maybe_start_navigation()
+
+    def _maybe_start_navigation(self):
+        """Send one Nav2 goal for the selected DANGER event."""
+        current = self.manager.current_event()
+        if not current:
+            return
+        elderly_id, event_id, state = current
+        if not self.navigation.can_start(event_id, elderly_id, state):
+            return
+        self._update_robot_pose()
+        if not self.manager.robot_pose_valid:
+            return
+        track = self.manager.tracks[elderly_id]
+        if (not track.position_valid or track.position_frame != self.map_frame
+                or not math.isfinite(track.elderly_x)
+                or not math.isfinite(track.elderly_y)):
+            return
+        approach = compute_approach_pose(
+            self.manager.robot_x, self.manager.robot_y,
+            track.elderly_x, track.elderly_y, self.approach_distance,
+        )
+        if approach is None or not self.navigate_client.wait_for_server(
+                timeout_sec=0.0):
+            return
+        goal = NavigateToPose.Goal()
+        goal.pose = PoseStamped()
+        goal.pose.header.stamp = self.get_clock().now().to_msg()
+        goal.pose.header.frame_id = self.map_frame
+        goal.pose.pose.position.x = approach.x
+        goal.pose.pose.position.y = approach.y
+        goal.pose.pose.orientation.z = math.sin(approach.yaw / 2.0)
+        goal.pose.pose.orientation.w = math.cos(approach.yaw / 2.0)
+        self.navigation.begin(event_id, elderly_id)
+        self._goal_handle = self.navigate_client.send_goal_async(
+            goal, feedback_callback=self._feedback_callback
+        )
+        self._goal_handle.add_done_callback(self._goal_response_callback)
+
+    @staticmethod
+    def _feedback_callback(_feedback):
+        return None
+
+    def _goal_response_callback(self, future):
+        try:
+            goal_handle = future.result()
+        except Exception as exc:  # pragma: no cover - ROS transport failure
+            self.get_logger().error(f'NavigateToPose send failed: {exc}')
+            self.navigation.result(False)
+            return
+        if not goal_handle.accepted:
+            self.navigation.result(False)
+            return
+        self._goal_handle = goal_handle
+        result_future = goal_handle.get_result_async()
+        result_future.add_done_callback(self._result_callback)
+
+    def _result_callback(self, future):
+        try:
+            result = future.result()
+            succeeded = result.status == 4  # GoalStatus.STATUS_SUCCEEDED
+        except Exception as exc:  # pragma: no cover - ROS transport failure
+            self.get_logger().error(f'NavigateToPose result failed: {exc}')
+            succeeded = False
+        self.navigation.result(succeeded)
+        self._goal_handle = None
+
+    def _cancel_navigation(self):
+        """Cancel the one active goal after target risk returns SAFE."""
+        if self._goal_handle is not None:
+            try:
+                self._goal_handle.cancel_goal_async()
+            except Exception as exc:  # pragma: no cover - ROS transport failure
+                self.get_logger().warning(f'goal cancellation failed: {exc}')
+        self.navigation.cancel()
 
     def _update_robot_pose(self):
         try:
@@ -310,6 +474,8 @@ class ElderlySafetyManager(Node):
 
     def _publish_status(self):
         self._update_robot_pose()
+        if self.navigation.state == MANAGER_GO_TO_ELDERLY:
+            self._maybe_start_navigation()
         current = self.manager.current_event()
         if current:
             elderly_id, event_id, state = current
@@ -319,7 +485,10 @@ class ElderlySafetyManager(Node):
         else:
             text = ''
         self.current_pub.publish(String(data=text))
-        self.state_pub.publish(String(data=self.manager.manager_state))
+        manager_state = self.navigation.state
+        if manager_state == MANAGER_MONITORING:
+            manager_state = self.manager.manager_state
+        self.state_pub.publish(String(data=manager_state))
 
 
 def main(args=None):

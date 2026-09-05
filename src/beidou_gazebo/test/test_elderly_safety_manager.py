@@ -8,12 +8,17 @@ from beidou_gazebo.elderly_safety_manager import (
     EVENT_WARNING_ENTER,
     EVENT_WARNING_EXIT,
     MANAGER_EVENT_SELECTED,
+    MANAGER_ARRIVED_NEAR_ELDERLY,
+    MANAGER_GO_TO_ELDERLY,
+    MANAGER_NAVIGATION_FAILED,
     MANAGER_MONITORING,
     STATE_DANGER,
     STATE_SAFE,
     STATE_UNKNOWN,
     STATE_WARNING,
     SafetyEventManager,
+    NavigationCoordinator,
+    compute_approach_pose,
 )
 
 
@@ -180,3 +185,40 @@ def test_non_map_position_is_not_used_for_distance():
     manager.update_position('elder_01', 1.0, 0.0, 1.0, True, 'odom')
     set_danger(manager, 'elder_01', 10.0)
     assert math.isinf(manager.tracks['elder_01'].robot_distance)
+
+
+def test_approach_pose_is_between_robot_and_elderly_and_faces_elderly():
+    approach = compute_approach_pose(0.0, 0.0, 5.0, 0.0, 1.3)
+    assert approach.x == 3.7
+    assert approach.y == 0.0
+    assert approach.yaw == 0.0
+
+
+def test_navigation_coordinator_sends_one_goal_and_reaches():
+    coordinator = NavigationCoordinator()
+    assert coordinator.can_start('elder_01-DANGER-0001', 'elder_01',
+                                 STATE_DANGER)
+    assert coordinator.begin('elder_01-DANGER-0001', 'elder_01')
+    assert coordinator.state == MANAGER_GO_TO_ELDERLY
+    assert not coordinator.can_start('elder_01-DANGER-0001', 'elder_01',
+                                     STATE_DANGER)
+    assert coordinator.goal_sent_count == 1
+    coordinator.result(True)
+    assert coordinator.state == MANAGER_ARRIVED_NEAR_ELDERLY
+
+
+def test_navigation_failure_is_terminal_without_retry():
+    coordinator = NavigationCoordinator()
+    coordinator.begin('elder_01-DANGER-0001', 'elder_01')
+    coordinator.result(False)
+    assert coordinator.state == MANAGER_NAVIGATION_FAILED
+    assert not coordinator.can_start('elder_01-DANGER-0001', 'elder_01',
+                                     STATE_DANGER)
+
+
+def test_navigation_cancel_clears_active_goal():
+    coordinator = NavigationCoordinator()
+    coordinator.begin('elder_01-DANGER-0001', 'elder_01')
+    assert coordinator.cancel()
+    assert coordinator.active_event_id == ''
+    assert coordinator.state == MANAGER_MONITORING
